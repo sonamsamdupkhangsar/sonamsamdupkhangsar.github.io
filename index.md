@@ -1,6 +1,6 @@
 ## Welcome to my page
 
-I have a kubernetes cluster on DigitalOcean.  It uses Nginx Ingress controller.
+I like working with Kubernetes so I have a k8 cluster that uses Nginx Ingress controller.
 I have several repository on Github that deploys on my k8 cluster using
 my [Helm chart](https://github.com/sonamsamdupkhangsar/sonam-helm-chart).
 
