@@ -1,2 +1,4 @@
 # sonamsamdupkhangsar.github.io
-A Readme for sake.
+
+medium articles
+linkedin
