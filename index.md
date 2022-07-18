@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+## Welcome to my page
 
-You can use the [editor on GitHub](https://github.com/sonamsamdupkhangsar/sonamsamdupkhangsar.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+I have a kubernetes cluster on DigitalOcean.  It uses Nginx Ingress controller.
+I have several repository on Github that deploys on my k8 cluster using
+my [Helm chart](https://github.com/sonamsamdupkhangsar/sonam-helm-chart).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I wrote a few [medium](https://medium.com/@sonamhava) articles based on my experience working with Nginx and Kubernetes.
 
-### Markdown
+I have built a messaging webapp for Android and Ios.  My messaging app is hosted
+on [kecha](https://kecha.sonam.cloud).  Now, I am working on refactoring the backen-services
+into microservices.  
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+I am working on building separate services for each domain
+such as user, authentication, s3 storage, thumbnail generation, emailing, and remote notifications for Firebase and Apple Push Notification services.
 
-```markdown
-Syntax highlighted code block
+### microservice projects
+[user-rest-services](https://github.com/sonamsamdupkhangsar/user-rest-service)
+[authentication-rest-services](https://github.com/sonamsamdupkhangsar/authentication-rest-service)
+[jwt-rest-service](https://github.com/sonamsamdupkhangsar/jwt-rest-service)
+[s3-rest-service](https://github.com/sonamsamdupkhangsar/s3-rest-service)
+[email-rest-service](https://github.com/sonamsamdupkhangsar/email-rest-service)
+[thumbnail-s3-rest-service](https://github.com/sonamsamdupkhangsar/thumbnail-s3-rest-service)
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sonamsamdupkhangsar/sonamsamdupkhangsar.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
