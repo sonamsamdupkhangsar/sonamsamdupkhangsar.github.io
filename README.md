@@ -31,6 +31,7 @@ annotations:
 
 ```mermaid
 flowchart TD
+    autonumber
     A[user request] --> |http authorization bearer jwt in header| B[Nignx Ingress]
     B -.-> | nginx ingress auth-url jwt validation| C{jwt-rest-service}
     C -.-> |http 200 status| B
