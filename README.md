@@ -22,8 +22,10 @@ flowchart TD
 #### User Access protected resource diagram
 The dashed line indicates the jwt validation that occurs when a request is 
 routed to jwt-rest-service by the Nginx Ingress controller.  The redirection
-occurs using the Nginx ingress annotation for "auth-url" annotations:
-``` annotations:
+occurs using the Nginx ingress annotation for "auth-url" annotations in the ingress.yaml
+file:
+```
+annotations:
     nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
 ```
 
