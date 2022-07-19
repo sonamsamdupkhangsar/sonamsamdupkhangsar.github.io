@@ -26,7 +26,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[user request] --> |http authorization bearer jwt in header| B[user-rest-service]
-    B --> | nginx ingress auth-url jwt validation| C[Nginx Ingress]
-    C --> | jwt validate | D[jwt-rest-service]    
+    A[user request] --> |http authorization bearer jwt in header| B[Nignx Ingress]
+    B --> | nginx ingress auth-url jwt validation| C[jwt-rest-service]
+    B --> D[user-rest-service]    
 ``` 
