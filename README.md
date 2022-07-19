@@ -28,5 +28,5 @@ flowchart TD
 flowchart TD
     A[user request] --> |http authorization bearer jwt in header| B[Nignx Ingress]
     B --> | nginx ingress auth-url jwt validation| C[jwt-rest-service]
-    B --> D[user-rest-service]    
+    C -.-> D[user-rest-service]    
 ``` 
