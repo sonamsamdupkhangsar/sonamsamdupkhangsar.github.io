@@ -30,7 +30,7 @@ flowchart TD
     F -. 3 calls-service .-> G
     F -. 1 validate jwt .-> I
     B -.-> k8
-    I -. 2 set authId header .->
+    I -. 2 set authId-header .->
     
 ```
 
