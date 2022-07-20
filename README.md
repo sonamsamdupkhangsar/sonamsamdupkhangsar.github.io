@@ -18,7 +18,7 @@ flowchart TD
     F(Nginx Ingress Controller) 
     end
     subgraph three
-    G(Application Kubernetes Service)
+    G(Kubernetes Service)
     G --> H(Microservice pod)
     end    
     end
