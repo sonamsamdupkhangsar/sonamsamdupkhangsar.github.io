@@ -27,7 +27,7 @@ flowchart TD
     I --> J(jwt-rest-service pod)
     end    
     end
-    F -. 2 Ingress call service .-> G
+    F -. 2  .-> G
     F -. 1 validate jwt .-> I
     B -.-> k8
     
