@@ -27,10 +27,10 @@ flowchart TD
     I --> J(jwt-rest-service pod)
     end    
     end
-    F -.-> G
-    F -.-> I
+    F -. 2 -> G
+    F -. 1 -> I
     B -.-> k8
-
+    
 ```
 
 #### User Signup diagram
