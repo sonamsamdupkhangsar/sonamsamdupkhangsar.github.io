@@ -27,9 +27,9 @@ flowchart TD
     I --> J(jwt-rest-service pod)
     end    
     end
-    F -.-> G
-    F -.-> I
-    B -.-> k8
+    F -. 2. call -> G
+    F -. 1. validate jwt .-> I
+    B -.-> k8    
 
 ```
 
