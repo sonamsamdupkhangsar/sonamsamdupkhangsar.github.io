@@ -4,6 +4,9 @@
 I have been working on some microservices developed using Java with Spring Reactive.
 These services are in my github repositories.
 
+I currently have the services deployed on a Kubernetes cluster using a Nginx Ingress controller.  
+
+
 #### User Signup diagram
 ```mermaid
 flowchart TD
