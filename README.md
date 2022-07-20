@@ -27,9 +27,10 @@ flowchart TD
     I --> J(jwt-rest-service pod)
     end    
     end
-    F -. 2 then serve .-> G
+    F -. 3 calls-service .-> G
     F -. 1 validate jwt .-> I
     B -.-> k8
+    I -. 2 set authId header .->
     
 ```
 
