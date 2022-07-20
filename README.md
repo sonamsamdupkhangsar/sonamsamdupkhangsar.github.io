@@ -6,6 +6,25 @@ These services are in my github repositories.
 
 I currently have the services deployed on a Kubernetes cluster using a Nginx Ingress controller.  
 
+### Kubernetes cluster
+```mermaid
+flowchart TD
+    A[user request] -.-> B(Load balancer)
+    B -.-> C(DNS Server)
+    C -.-> D[/pactbroker.sonam.cloud/]
+    subgraph one
+    D(Kubernetes Cluster)
+    subgraph two
+    E(Nginx Ingress Controller) 
+    end
+    subgraph three
+    F(Application Kubernetes Service)
+    end
+    E -.-> F
+    end
+
+
+```
 
 #### User Signup diagram
 ```mermaid
