@@ -18,14 +18,18 @@ flowchart TD
     subgraph ingress[Ingress]
     F(Nginx Controller)
     end
-    subgraph app[microservice]
+    subgraph app[email-rest-service]
     G(Kubernetes Service)
-    G --> H(Microservice pod)
+    G --> H(email-rest-service pod)
+    end    
+    subgraph app[jwt-rest-service]
+    I(Kubernetes Service)
+    I --> J(jwt-rest-service pod)
     end    
     end
     F -.-> G
+    F -.-> I
     B -.-> k8
-
 
 ```
 
