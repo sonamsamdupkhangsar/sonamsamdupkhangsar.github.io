@@ -27,8 +27,8 @@ flowchart TD
     I --> J(jwt-rest-service pod)
     end    
     end
-    F -. 2 -> G
-    F -. 1 -> I
+    F -. 2 .-> G
+    F -. 1 .-> I
     B -.-> k8
     
 ```
