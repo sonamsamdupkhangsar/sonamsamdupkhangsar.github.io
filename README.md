@@ -21,6 +21,7 @@ flowchart TD
     G(Application Kubernetes Service)
     end
     F -.-> G
+    B -.-> F
     end
 
 
