@@ -1,8 +1,10 @@
 # sonamsamdupkhangsar.github.io
 
 ### integration of microservices
+I have been working on some microservices developed using Java with Spring Reactive.
+These services are in my github repositories.
 
-#### Use Signup diagram
+#### User Signup diagram
 ```mermaid
 flowchart TD
     A[user request] --> |new user signup| B[user-rest-service]
