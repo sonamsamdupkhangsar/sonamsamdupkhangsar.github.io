@@ -7,6 +7,8 @@ These services are in my github repositories.
 I currently have the services deployed on a Kubernetes cluster using a Nginx Ingress controller.  
 
 ### Kubernetes cluster
+The following diagram shows the request flow on a Kubernetes cluster.
+
 ```mermaid
 flowchart TD
     A[user request] -.-> B(Load balancer)
