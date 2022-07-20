@@ -12,12 +12,12 @@ flowchart TD
     A[user request] -.-> B(Load balancer)
     B -.-> C(DNS Server)
     C -.-> D[/pactbroker.sonam.cloud/]
-    subgraph one
+    subgraph 
     D(Kubernetes Cluster)
-    subgraph two
+    subgraph 
     E(Nginx Ingress Controller) 
     end
-    subgraph three
+    subgraph 
     F(Application Kubernetes Service)
     end
     E -.-> F
