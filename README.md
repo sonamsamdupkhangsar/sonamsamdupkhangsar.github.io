@@ -28,7 +28,7 @@ flowchart TD
     end    
     end
     F -. 2 .-> G
-    F -. 1 .-> I
+    F -. 1 validate jwt .-> I
     B -.-> k8
     
 ```
