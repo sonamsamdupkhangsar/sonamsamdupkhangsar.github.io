@@ -20,7 +20,7 @@ flowchart TD
     end
     subgraph app[email-rest-service]
     G(Kubernetes Service)
-    G --> H(email-rest-service pod)
+    G -- uses authId header for user context --> H(email-rest-service pod)    
     end    
     subgraph jwt[jwt-rest-service]
     I(Kubernetes Service)
