@@ -22,7 +22,7 @@ flowchart TD
     G(Kubernetes Service)
     G --> H(email-rest-service pod)
     end    
-    subgraph app[jwt-rest-service]
+    subgraph jwt[jwt-rest-service]
     I(Kubernetes Service)
     I --> J(jwt-rest-service pod)
     end    
