@@ -13,7 +13,7 @@ The following diagram shows the request flow on a Kubernetes cluster.
 flowchart TD
     A[user request] -.-> B(Load balancer)
     B -.-> C(DNS Server)
-    C -.-> D[/pactbroker.sonam.cloud/]
+    C -.-> D[/email-rest-service.sonam.cloud/]
     subgraph k8[Kubernetes Cluster]
     subgraph ingress[Ingress]
     F(Nginx Controller)
