@@ -52,7 +52,7 @@ flowchart TD
     UserRequest[user request] --> |1. authenticate with username/password| AuthenticationRestService[authentication-rest-service]    
     AuthenticationRestService --> |2. check account for active state| AccountRestService[account-rest-service]
     AuthenticationRestService --> |3. create jwt| JwtRestService[jwt-rest-service internal]    
-    JwtRestService -. JWT token .-> UserRequest    
+    JwtRestService -. 4. JWT token .-> UserRequest    
 ``` 
 
 #### User Access protected resource diagram
