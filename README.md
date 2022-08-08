@@ -39,7 +39,7 @@ flowchart TD
 flowchart TD
     Request[user request] --> |1. new user signup| UserRestService[user-rest-service]
     UserRestService -->|2. create user record| UserPgsqlDb[(user postgresqldb)]
-    UserRestService -->|3. user signup| AuthenticationRestService[authentication-rest-service]
+    UserRestService -->|3. create Authentication | AuthenticationRestService[authentication-rest-service]
     AuthenticationRestService -->|4. authentication create| AuthenticationPgsqlDb[(authentication postgresqldb)]
     UserRestService -->|5. create Account inActive| AccountRestService[account-rest-service]
     AccountRestService -->|6. save Account| AccountPgsqlDb[(account postgresqldb)]
