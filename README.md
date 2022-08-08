@@ -41,7 +41,7 @@ flowchart TD
     UserRestService -->|2. create user record| UserPgsqlDb[(user postgresqldb)]
     UserRestService -->|3. create Authentication `/public/authentications` | AuthenticationRestService[authentication-rest-service]
     AuthenticationRestService -->|4. save authentication| AuthenticationPgsqlDb[(authentication postgresqldb)]
-    UserRestService -->|5. create Account inActive| AccountRestService[account-rest-service internal]
+    UserRestService -->|5. create Account inActive `/accounts/{authenticationId}/{email}`| AccountRestService[account-rest-service internal]
     AccountRestService -->|6. save Account and create passwordsecret| AccountPgsqlDb[(account postgresqldb)]
     AccountRestService --> |7. email user with link to activate account with secret| EmailRestService[email-rest-service internal]    
 ```
@@ -57,7 +57,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    UserRequest[user request] --> |1. authenticate with username/password| AuthenticationRestService[authentication-rest-service]    
+    UserRequest[user request] --> |1. authenticate with username/password `/public/authentications/authenticate`| AuthenticationRestService[authentication-rest-service]    
     AuthenticationRestService --> |2. check account for active state| AccountRestService[account-rest-service]
     AuthenticationRestService --> |3. create jwt| JwtRestService[jwt-rest-service internal]    
     JwtRestService -. 4. JWT token .-> UserRequest    
