@@ -37,10 +37,12 @@ flowchart TD
 #### User Signup diagram
 ```mermaid
 flowchart TD
-    A[user request] --> |new user signup| B[user-rest-service]
-    B[user-rest-service] -->|create user record| E[(user postgresqldb)]
-    B[user-rest-service] -->|user signup| C[authentication-rest-service]
-    C -->|authentication create| D[(authentication postgresqldb)]       
+    Request[user request] --> |1. new user signup| UserRestService[user-rest-service]
+    UserRestService -->|2. create user record| UserPgsqlDb[(user postgresqldb)]
+    UserRestService -->|3. user signup| AuthenticationRestService[authentication-rest-service]
+    AuthenticationRestService -->|4. authentication create| AuthenticationPgsqlDb[(authentication postgresqldb)]
+    UserRestService -->|5. create Account inActive| AccountRestService[account-rest-service]
+    AccountRestService --|6. Account| --> AccountPgsqlDb[(account postgresqldb)]
 ```
 
 #### User Authentication diagram
