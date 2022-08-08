@@ -37,11 +37,11 @@ flowchart TD
 #### User Signup diagram
 ```mermaid
 flowchart TD
-    Request[user request] --> |1. new user signup| UserRestService[user-rest-service]
+    UserRequest[user request] --> |1. new user signup| UserRestService[user-rest-service]
     UserRestService -->|2. create user record| UserPgsqlDb[(user postgresqldb)]
     UserRestService -->|3. create Authentication | AuthenticationRestService[authentication-rest-service]
     AuthenticationRestService -->|4. authentication create| AuthenticationPgsqlDb[(authentication postgresqldb)]
-    UserRestService -->|5. create Account inActive| AccountRestService[account-rest-service]
+    UserRestService -->|5. create Account inActive| AccountRestService[account-rest-service internal]
     AccountRestService -->|6. save Account| AccountPgsqlDb[(account postgresqldb)]
 ```
 
@@ -49,8 +49,10 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[user request] --> |authenticate with username/password| B[authentication-rest-service]
-    B --> | create jwt| C[jwt-rest-service]    
+    UserRequest[user request] --> |1. authenticate with username/password| AuthenticationRestService[authentication-rest-service]    
+    AuthenticationRestService --> |2. check account for active state| AccountRestService[account-rest-service]
+    AuthenticationRestService --> |3. create jwt| JwtRestService[jwt-rest-service internal]    
+    JwtRestService -. JWT token .-> UserRequest    
 ``` 
 
 #### User Access protected resource diagram
