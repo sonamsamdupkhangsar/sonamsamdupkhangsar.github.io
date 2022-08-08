@@ -42,14 +42,15 @@ flowchart TD
     UserRestService -->|3. create Authentication | AuthenticationRestService[authentication-rest-service]
     AuthenticationRestService -->|4. authentication create| AuthenticationPgsqlDb[(authentication postgresqldb)]
     UserRestService -->|5. create Account inActive| AccountRestService[account-rest-service internal]
-    AccountRestService -->|6. save Account| AccountPgsqlDb[(account postgresqldb)]
-    AccountRestService --> |7. email user with link to activate account| EmailRestService[email-rest-service internal]    
+    AccountRestService -->|6. save Account and create passwordsecret| AccountPgsqlDb[(account postgresqldb)]
+    AccountRestService --> |7. email user with link to activate account with secret| EmailRestService[email-rest-service internal]    
 ```
 
 #### User Actiate Account diagram
 ```mermaid
 flowchart TD
-    UserRequest[user request] -->|8. user activates account with link to AccountRestService url| AccountRestService[account-rest-service]
+    UserRequest[user request] -->|1. user activates account with link to AccountRestService url| AccountRestService[account-rest-service]
+    AccountRestService --> |2. save account in active state| AccountPgsqlDb[(account postgresqldb)]
 ```
 
 #### User Authentication diagram
