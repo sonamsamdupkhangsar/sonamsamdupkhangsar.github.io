@@ -46,7 +46,7 @@ flowchart TD
     AccountRestService --> |7. email user with link to activate account with secret| EmailRestService[email-rest-service internal]    
 ```
 
-#### User Actiate Account diagram
+#### User Activate Account diagram
 ```mermaid
 flowchart TD
     UserRequest[user request] -->|1. user activates account with link to AccountRestService url| AccountRestService[account-rest-service]
