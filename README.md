@@ -37,18 +37,30 @@ flowchart TD
 #### User Signup diagram
 ```mermaid
 flowchart TD
-    A[user request] --> |new user signup| B[user-rest-service]
-    B[user-rest-service] -->|create user record| E[(user postgresqldb)]
-    B[user-rest-service] -->|user signup| C[authentication-rest-service]
-    C -->|authentication create| D[(authentication postgresqldb)]       
+    UserRequest[user request] --> |1. new user signup| UserRestService[user-rest-service]
+    UserRestService -->|2. create user record| UserPgsqlDb[(user postgresqldb)]
+    UserRestService -->|3. create Authentication `/public/authentications` | AuthenticationRestService[authentication-rest-service]
+    AuthenticationRestService -->|4. save authentication| AuthenticationPgsqlDb[(authentication postgresqldb)]
+    UserRestService -->|5. create Account inActive `/accounts/authenticationId_value/email_value`| AccountRestService[account-rest-service internal]
+    AccountRestService -->|6. save Account and create passwordsecret| AccountPgsqlDb[(account postgresqldb)]
+    AccountRestService --> |7. email user with link to activate account with secret| EmailRestService[email-rest-service internal]    
+```
+
+#### User Activate Account diagram
+```mermaid
+flowchart TD
+    UserRequest[user request] -->|1. user activates account with link to AccountRestService url| AccountRestService[account-rest-service]
+    AccountRestService --> |2. save account in active state| AccountPgsqlDb[(account postgresqldb)]
 ```
 
 #### User Authentication diagram
 
 ```mermaid
 flowchart TD
-    A[user request] --> |authenticate with username/password| B[authentication-rest-service]
-    B --> | create jwt| C[jwt-rest-service]    
+    UserRequest[user request] --> |1. authenticate with username/password `/public/authentications/authenticate`| AuthenticationRestService[authentication-rest-service]    
+    AuthenticationRestService --> |2. check account for active state| AccountRestService[account-rest-service]
+    AuthenticationRestService --> |3. create jwt| JwtRestService[jwt-rest-service internal]    
+    JwtRestService -. 4. JWT token .-> UserRequest    
 ``` 
 
 #### User Access protected resource diagram
