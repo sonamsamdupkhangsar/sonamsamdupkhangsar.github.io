@@ -136,4 +136,4 @@ RUN --mount=type=secret,id=PERSONAL_ACCESS_TOKEN \
    mvn -s settings.xml clean install
 ```
 
-You should now be able to build the Dockerfile with your custom `settings.xml` file.  For reference on how this is all working you can checkout the https://github.com/sonamsamdupkhangsar/jwt-rest-service
+You should now be able to build the Dockerfile with your custom `settings.xml` file.  For reference on how this is all working you can checkout my [jwt-rest-service](https://github.com/sonamsamdupkhangsar/jwt-rest-service).
