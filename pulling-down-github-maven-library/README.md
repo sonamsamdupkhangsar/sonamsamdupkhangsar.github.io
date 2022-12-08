@@ -8,6 +8,7 @@ Table Of Contents
 3. [Building maven project](#building-maven-project)
 4. [Integrating into Github Action with Dockerfile](#integrating-into-github-action-with-dockerfile)
 
+<br/>
 ## Include Jar in Maven Project
 In order to use the maven artifact you will first include it in the `pom.xml` file.  For this article purposes, I am going to use my github maven project [jwt-validator](https://github.com/sonamsamdupkhangsar/jwt-validator) as a dependency to be included in another project.  
 
@@ -23,7 +24,7 @@ This dependency library is for validating jwt token which can be included in a p
 
 Then you have to follow the next section [Customize settings.xml](#customize-settingsxml) section below to update your settings file.
 <br/>
-
+<br/>
 
 ## Customize settings.xml
 To pull down a github repository maven artifact you will have to update your maven's `settings.xml` to reference the github repository where the artifiact is and also have a Personal Access Token.
@@ -33,6 +34,7 @@ You can setup a personal access token by visiting your Github profile, then to `
 
 The following is a settings.xml file for downloading [jwt-validator](https://github.com/sonamsamdupkhangsar/jwt-validator) maven artifact from my Github repository to be used in another project like my [application-rest-service](https://github.com/sonamsamdupkhangsar/application-rest-service) for validating user request based on a jwt token:
 
+<br/>
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -76,6 +78,7 @@ Then I also specify my PERSONAL_ACCESS_TOKEN as a variable that can be injected 
 
 To build the maven project follow the [Building maven project](#building-maven-project) below.
 <br/>
+<br/>
 
 ## Building maven project
 After you have included the maven library in your pom and customized the `settings.xml` you can download the library and build the project as `mvn clean install` for example.  
@@ -95,7 +98,7 @@ export PERSONAL_ACCESS_TOKEN=<your pat value>
 
 If you want to integrate the above settings file in a Github action pipeline follow [Integrating into Github Action with Dockerfile](#integrating-into-github-action-with-dockerfile) below.
 <br/>
-
+<br/>
 
 ## Integrating into Github Action with Dockerfile
 For this article, I am building my project using Github action pipeline.  I am using `docker/build-push-action@v3` action for building my docker image as follows:
@@ -137,3 +140,4 @@ RUN --mount=type=secret,id=PERSONAL_ACCESS_TOKEN \
 ```
 
 You should now be able to build the Dockerfile with your custom `settings.xml` file.  For reference on how this is all working you can checkout my [jwt-rest-service](https://github.com/sonamsamdupkhangsar/jwt-rest-service).
+<br/>
