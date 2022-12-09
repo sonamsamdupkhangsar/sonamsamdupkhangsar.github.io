@@ -23,7 +23,7 @@ flowchart TD
     subgraph app[email-rest-service]
     G(Kubernetes Service)
     G -- uses authId header for user context --> H(email-rest-service pod)
-    H -- validate jwt token using jwt-validator --> JwtValidator(jwt-validator)    
+    H -- validate jwt token using jwt-validator --> H
     end    
     
     end
