@@ -10,8 +10,9 @@ I have a service named `user-rest-service` that provides some user service.  Now
 If the JWT token is not expired then `jwt-rest-service` will return a Http 200 status.  If JWT is expired it will return a Http 400 response code.
 
 <br/>
+
 The following is the workflow with numbers reflecting the workflow sequence:
-(The following is a mermaidjs diagram.  If it doesn't render click on the [README](#customize-authentication-for-nginx-ingress-controller) file): 
+The following is a mermaidjs diagram.  If it doesn't render click on the [README file](#customize-authentication-for-nginx-ingress-controller): 
 
 
 ```mermaid
