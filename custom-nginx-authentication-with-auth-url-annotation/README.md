@@ -7,7 +7,7 @@ This is a short content about implementing authentication with Nginx Ingress con
 I have a service named `user-rest-service` that provides some user service.  Now, I want to secure it by checking user requests for a JWT token that is valid with a service called `jwt-rest-service`.  For valid we will check that the token has not expired by time.
 
 
-If the JWT token is not expired then it will return a Http 200 status.  If JWT is expired it will return a Http 400 response code.
+If the JWT token is not expired then `jwt-rest-service` will return a Http 200 status.  If JWT is expired it will return a Http 400 response code.
 
 <br/>
 The following is the workflow with numbers reflecting the workflow sequence:
