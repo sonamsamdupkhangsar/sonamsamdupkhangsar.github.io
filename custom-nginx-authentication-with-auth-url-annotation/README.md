@@ -11,6 +11,8 @@ If the JWT token is not expired then `jwt-rest-service` will return a Http 200 s
 
 <br/>
 The following is the workflow with numbers reflecting the workflow sequence:
+(The following is a mermaidjs diagram.  If it doesn't render click on the [README](#customize-authentication-for-nginx-ingress-controller) file): 
+
 
 ```mermaid
 flowchart TD    
