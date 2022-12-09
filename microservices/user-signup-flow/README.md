@@ -2,7 +2,6 @@
 The following shows the user signup workflow using the user-rest-service, authentication-rest-service and account-rest-service.
 
 
-#### User Signup diagram
 ```mermaid
 flowchart TD
     UserRequest[user request] --> |1. new user signup| UserRestService[user-rest-service]
