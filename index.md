@@ -27,6 +27,7 @@ such as user, authentication, s3 storage, thumbnail generation, emailing, and re
 [thumbnail-s3-rest-service](https://github.com/sonamsamdupkhangsar/thumbnail-s3-rest-service)
 
 
-Please check the readme files for rendering support of Mermaidjs
+Articles
 
-https://github.com/sonamsamdupkhangsar/sonamsamdupkhangsar.github.io 
+1.  [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
+2. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
