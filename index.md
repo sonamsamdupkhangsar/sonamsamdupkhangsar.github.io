@@ -30,3 +30,4 @@ such as user, authentication, s3 storage, thumbnail generation, emailing, and re
 Articles
 
 1.  [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
+2. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
