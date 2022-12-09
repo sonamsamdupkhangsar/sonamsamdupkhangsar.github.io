@@ -32,21 +32,7 @@ flowchart TD
     
 ```
 
-#### User Access protected resource diagram
-The dashed line indicates the jwt validation that occurs when a request is 
-routed to jwt-rest-service by the Nginx Ingress controller.  The redirection
-occurs using the Nginx ingress annotation for "auth-url" annotations in the ingress.yaml
-file:
-```
-annotations:
-    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
-```
+Articles
 
-```mermaid
-flowchart TD    
-    A[user request] --> |http authorization bearer jwt in header| B[Nignx Ingress]
-    B -.-> | nginx ingress auth-url jwt validation| C{jwt-rest-service}
-    C -.-> |http 200 status| B
-    B -->|secured service| D[user-rest-service] 
-    C -.-> | http not 200 status| A
-``` 
+1.  [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
+2. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
