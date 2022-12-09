@@ -1,2 +1,4 @@
+plugins:
+  - jekyll-spaceship
 title: Sonam's homepage
 description: This is my homepage
