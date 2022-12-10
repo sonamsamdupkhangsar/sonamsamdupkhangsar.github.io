@@ -1,33 +1,9 @@
 ## Welcome to my page
+Github Pages do not support mermaidjs rendering by default. Use 
+[README](https://github.com/sonamsamdupkhangsar/sonamsamdupkhangsar.github.io) for now.
 
-I like working with Kubernetes so I have a k8 cluster that uses Nginx Ingress controller.
-I have several repository on Github that deploys on my k8 cluster using
-my [Helm chart](https://github.com/sonamsamdupkhangsar/sonam-helm-chart).
-
-I wrote a few [medium](https://medium.com/@sonamhava) articles based on my experience working with Nginx and Kubernetes.
-
-I have built a messaging webapp for Android and Ios.  My messaging app is hosted
-on [kecha](https://kecha.sonam.cloud).  Now, I am working on refactoring the backen-services
-into microservices.  
-
-I am working on building separate services for each domain
-such as user, authentication, s3 storage, thumbnail generation, emailing, and remote notifications for Firebase and Apple Push Notification services.
-
-### microservice projects
-[jwt-rest-service](https://github.com/sonamsamdupkhangsar/jwt-rest-service)
-
-[user-rest-services](https://github.com/sonamsamdupkhangsar/user-rest-service)
-
-[authentication-rest-services](https://github.com/sonamsamdupkhangsar/authentication-rest-service)
-
-[s3-rest-service](https://github.com/sonamsamdupkhangsar/s3-rest-service)
-
-[email-rest-service](https://github.com/sonamsamdupkhangsar/email-rest-service)
-
-[thumbnail-s3-rest-service](https://github.com/sonamsamdupkhangsar/thumbnail-s3-rest-service)
-
-
-Articles
-
-1.  [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
-2. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
+1. My [Helm chart](https://github.com/sonamsamdupkhangsar/sonam-helm-chart).
+2. Some articles of mine on [medium](https://medium.com/@sonamhava) 
+3. My messaging app [kecha](https://kecha.sonam.cloud)
+4. [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
+5. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)

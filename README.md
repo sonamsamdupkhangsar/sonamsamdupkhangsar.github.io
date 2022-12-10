@@ -1,10 +1,11 @@
 # sonamsamdupkhangsar.github.io
+Some links
 
-### integration of microservices
-I have been working on some microservices developed using Java with Spring Reactive.
-These services are in my github repositories.
-
-I currently have the services deployed on a Kubernetes cluster using a Nginx Ingress controller.  
+1. My [Helm chart](https://github.com/sonamsamdupkhangsar/sonam-helm-chart).
+2. Some articles of mine on [medium](https://medium.com/@sonamhava) 
+3. My messaging app [kecha](https://kecha.sonam.cloud)
+4. [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
+5. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
 
 ### Kubernetes cluster
 The following diagram shows the request flow on a Kubernetes cluster.
@@ -31,8 +32,3 @@ flowchart TD
     B -.-> k8
     
 ```
-
-Articles
-
-1.  [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
-2. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
