@@ -15,14 +15,14 @@ The following is the workflow with numbers reflecting the workflow sequence:
 The following is a mermaidjs diagram.  If it doesn't render click on the [README file](#customize-authentication-for-nginx-ingress-controller): 
 
 
-```mermaid
+<div class="mermaid">
 flowchart TD    
     A[user request] --> |"(1) http authorization bearer jwt in header"| B[Nignx Ingress]
     B -.-> |"(1.1) nginx ingress auth-url jwt validation"| C{jwt-rest-service}
     C -.-> |"(1.2) http 200 status"| B
     B -->|"(2) secured service"| D[user-rest-service] 
     C -.-> | http not 200 status, user received error| A
-``` 
+</div>
 
 To achieve this you can deploy your service `jwt-rest-service` first that validates the JWT token.  Then in the `user-rest-service` configuration your nginx ingress configuration must have the following annotation line:
 
