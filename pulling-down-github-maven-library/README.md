@@ -33,8 +33,9 @@ You can setup a personal access token by visiting your Github profile, then to `
 
 
 The following is a settings.xml file for downloading [jwt-validator](https://github.com/sonamsamdupkhangsar/jwt-validator) maven artifact from my Github repository to be used in another project like my [application-rest-service](https://github.com/sonamsamdupkhangsar/application-rest-service) for validating user request based on a jwt token:
-
 <br/>
+
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -61,6 +62,7 @@ The following is a settings.xml file for downloading [jwt-validator](https://git
             </repositories>
         </profile>
     </profiles>
+
     <servers>
         <server>
             <id>github</id>
