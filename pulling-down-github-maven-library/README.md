@@ -102,6 +102,19 @@ If you want to integrate the above settings file in a Github action pipeline fol
 <br/>
 
 ## Integrating into Github Action with Dockerfile
+
+Building it with a github action in a `deploy.yml` with passing PERSONAL_ACCESS_TOKEN variable:
+<br/>
+
+```
+- name: Publish package
+  run: mvn -s settings.xml --batch-mode deploy
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+    PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+``` 
+<br/>
+
 For this article, I am building my project using Github action pipeline.  I am using `docker/build-push-action@v3` action for building my docker image as follows:
 
 ```
