@@ -61,7 +61,6 @@ The following is a settings.xml file for downloading [jwt-validator](https://git
             </repositories>
         </profile>
     </profiles>
-
     <servers>
         <server>
             <id>github</id>
