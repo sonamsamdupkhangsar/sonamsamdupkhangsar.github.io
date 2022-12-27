@@ -23,11 +23,5 @@ flowchart TD
 ```
 
 #### User Authentication diagram
+[User Authentication workflow](https://github.com/sonamsamdupkhangsar/authentication-rest-service#workflow-for-authentication)
 
-```mermaid
-flowchart TD
-    UserRequest[user request] --> |1. authenticate with username/password `/public/authentications/authenticate`| AuthenticationRestService[authentication-rest-service]    
-    AuthenticationRestService --> |2. check account for active state| AccountRestService[account-rest-service]
-    AuthenticationRestService --> |3. create jwt| JwtRestService[jwt-rest-service internal]    
-    JwtRestService -. 4. JWT token .-> UserRequest    
-``` 
