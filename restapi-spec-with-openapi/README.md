@@ -96,7 +96,10 @@ Here is an example of a swaggerui instance running:
 
 ![swaggerui-run-locally-example](images/swaggerui-localhost.png)
 
-This screenshot example is running a SwaggerUI using a SpringFlux with Swagger plugin with some selected OpenAPI yaml.  Based on the spec definition selection using the pulldown menu only that spec is shown in detail to the user:
+
+The above screenshot example is running a SwaggerUI using Spring  webflux with Swagger dependency with some selected OpenAPI yaml.  
+
+Users can select a OpenAPI on the `Select a definition` pulldown menu to load each individual Rest api specification.:
 
 ![swaggerui-spec-selection](images/spec-definition-selection.png)
 
