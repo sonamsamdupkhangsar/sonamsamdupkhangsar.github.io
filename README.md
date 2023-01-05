@@ -6,7 +6,7 @@ Some links
 3. My messaging app [kecha](https://kecha.sonam.cloud)
 4. [How to use Maven dependency from Github repository and in your project](/pulling-down-github-maven-library/README.md)
 5. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
-
+6. [OpenApi Rest design](./restapi-spec-with-openapi/README.md)
 Some personal stuff I am working on:
 
 1. [User signup flow](/microservices/user-signup-activation-flow/README.md) 
