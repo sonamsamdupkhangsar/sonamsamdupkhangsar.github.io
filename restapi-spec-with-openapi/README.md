@@ -29,9 +29,9 @@ You can also take a middle way approach on building webservice api which is taki
 # Top Down Design Rest API
 This document will describe ways of building Rest api using Top Down approach.  Top Down as the name implies involves creating the Rest Api spec first.  
 
-For building Rest specification there is RAML (Restful Api Modeling Langauge) which is used for building Rest api on the Mulesoft platform.  There is also (OpenAPI Specification) [https://swagger.io/specification/] for building Rest specification using Swagger tools for creating and validating the spec files.
+For building Rest specification there is RAML (Restful Api Modeling Langauge) which is used for building Rest api on the Mulesoft platform.  There is also (OpenAPI Specification) known as OAS [https://swagger.io/specification/] for building Rest specification using Swagger tools for creating and validating the OpenAPI spec files.
 
-OpenAPI specification (OAS) is simple to understand and can be shared easily with each other by hosting the spec files using the Swagger ui.  The naming convention for OpenAPI spec file is `openapi.json` for a json format or `openapi.yaml` for a yaml format.  The yaml format is easier to understand and write with just indentations.
+OpenAPI specification is simple to understand and can be shared easily with each other by hosting the spec files using the Swagger ui.  The naming convention for OpenAPI spec file is `openapi.json` for a json format or `openapi.yaml` for a yaml format.  The yaml format is easier to understand and write with just indentations.
 
 The openapi.yaml file can describe the endpoints, the inbound request body and path parameters.  It can also describe the expected responses for a happy path and also the error responses.  This approach of building the spec file can level with all team members on the contract that each consumer and the provider will agree on.  The following is a contract file for a authentication service:
 ```
