@@ -108,7 +108,7 @@ Users can select a OpenAPI on the `Select a definition` pulldown menu to load ea
 A service provider can build their implementation based on the  OpenAPI spec using their openapi.yaml file.  Similarly the client can also build their request using the spec with the expected behaviors for handling responses.
 
 
-There will also be need for validating that the service provider and consumer are programming to the contracts specified in the openapi.yaml spec file.  To achieve this compliance a consumer can publish their expectations using a Pactbroker.  In return the service provider can gurantee that their service implementation meets the consumer's expectation based on the specification also.  
+There will also be a need for validating that the service provider and consumer are programming to the contracts specified in the openapi.yaml spec file.  To achieve this compliance a consumer can publish their expectations to a Pactbroker.  In return the service provider can gurantee that their service implementation meets the consumer's expectation based on the specification also.  This can ensure that both provider and consumer are meeting the contract as specified per the openapi.yaml file. 
 
 
 
