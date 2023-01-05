@@ -75,7 +75,7 @@ paths:
                 example:
                   text: some error code
 ```
-In this OpenAPI file, I have a `authentications` endpoint that accepts a http post and requires a http body that conforms the schema mentioned.  It also gives an example of the json payload.  
+In this OpenAPI file, I have a `authentications` endpoint that accepts a http post and requires a http body that conforms to the schema mentioned.  It also gives an example of the json payload.  
 
 
 Once you have the contract there are code generation tools that can be used to generate the stubs if needed.  The contract file can also be validated using the (swaggerui editor)[https://editor.swagger.io/] tool.  There are also tools for validating as part of the CI process.
