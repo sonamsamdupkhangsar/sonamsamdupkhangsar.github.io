@@ -97,7 +97,7 @@ Here is an example of a swaggerui instance running:
 ![swaggerui-run-locally-example](images/swaggerui-localhost.png)
 
 
-The above screenshot example is running a SwaggerUI using Spring  webflux with Swagger dependency with some selected OpenAPI yaml.  
+The above screenshot example is running a SwaggerUI using Spring  webflux with Swagger dependency and some OpenAPI yaml files from [my swaggerui git repository] (https://github.com/sonamsamdupkhangsar/swaggerui)
 
 Users can select a OpenAPI on the `Select a definition` pulldown menu to load each individual Rest api specification.:
 
