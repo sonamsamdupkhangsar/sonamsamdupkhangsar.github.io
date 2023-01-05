@@ -29,7 +29,7 @@ You can also take a middle way approach on building webservice api which is taki
 # Top Down Design Rest API
 This document will describe ways of building Rest api using Top Down approach.  Top Down as the name implies involves creating the Rest Api spec first.  
 
-For building Rest specification there is RAML (Restful Api Modeling Langauge) which is used for building Rest api on the Mulesoft platform.  There is also (OpenAPI Specification) known as OAS [https://swagger.io/specification/] for building Rest specification using Swagger tools for creating and validating the OpenAPI spec files.
+For building Rest specification there is RAML (Restful Api Modeling Langauge) which is used for building Rest api on the Mulesoft platform.  There is also [OpenAPI Specification](https://swagger.io/specification/), OAS,  for building Rest specification using Swagger tools for creating and validating the OpenAPI spec files.
 
 OpenAPI specification is simple to understand and can be shared easily with each other by hosting the spec files using the Swagger ui.  The naming convention for OpenAPI spec file is `openapi.json` for a json format or `openapi.yaml` for a yaml format.  The yaml format is easier to understand and write with just indentations.
 
@@ -78,7 +78,7 @@ paths:
 In this OpenAPI file, I have a `authentications` endpoint that accepts a http post and requires a http body that conforms to the schema mentioned.  It also gives an example of the json payload.  
 
 
-After creating the OpenAPI.yaml contract file there are code generation tools that can be used for creating the stubs if needed.  The contract file can also be validated using the (swaggerui editor)[https://editor.swagger.io/] tool.  There are also tools for validating as part of the CI process.
+After creating the OpenAPI.yaml contract file there are code generation tools that can be used for creating the stubs if needed.  The contract file can also be validated using the [swaggerui editor](https://editor.swagger.io/) tool.  There are also tools for validating as part of the CI process.
 
 It is best to put the spec file in a git repository for creating Pull Request for team members to review and version it.  Once the spec file has been agreed on you may also want to share it with others internally or to the external partners.
 
@@ -97,11 +97,12 @@ Here is an example of a swaggerui instance running:
 ![swaggerui-run-locally-example](images/swaggerui-localhost.png)
 
 
-The above screenshot example is running a SwaggerUI using Spring  webflux with Swagger dependency and some OpenAPI yaml files from [my swaggerui git repository] (https://github.com/sonamsamdupkhangsar/swaggerui)
+The above screenshot example is running a SwaggerUI using Spring  webflux with Swagger dependency and some OpenAPI yaml files from [my swaggerui git repository](https://github.com/sonamsamdupkhangsar/swaggerui)
 
-Users can select a OpenAPI on the `Select a definition` pulldown menu to load each individual Rest api specification.:
+Users can select a OpenAPI on the `Select a definition` pulldown menu to load each individual Rest api specification:
 
 ![swaggerui-spec-selection](images/spec-definition-selection.png)
+
 
 ## Contract Testing
 A service provider can build their implementation based on the  OpenAPI spec using their openapi.yaml file.  Similarly the client can also build their request using the spec also build their response behaviors using the response properties from the spec.
