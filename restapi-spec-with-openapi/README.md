@@ -2,7 +2,7 @@
 Date: January 5 2022
 
 # Designing Webservice API
-There are several approaches for building webservice API.  You can start at the bottom, meaning building the implementation first and then using annotation to mark the class or interface as the Rest endpoints.  This approach was very common in my experience in the Java webservice when we were building SOAP services about a dozen years ago.  This approach of using Java annotation was used because either we were not familiar with the SOAP specification("spec") or just didn't want to learn it when there are toolings to build the SOAP interface.
+There are several approaches for building webservice API.  You can start at the bottom, meaning building the implementation first and then using annotation to mark the class or interface as the Rest endpoints.  This approach was very common in my experience in the Java webservice when we were building SOAP services about a dozen years ago.  This approach of using Java annotation was used because either we were not familiar with the SOAP specification("spec") or just used the toolings to build the SOAP interface.
 
 This approach of building from the bottom led to strange namespaces in the SOAP wsdl which had nothing to do with the company at all depending on what tooling you used for the wsdl generation.  This namespace would really have a impact on code generation because the packages would take the namespace names.
 
