@@ -1,4 +1,4 @@
-# Webservice development Approaches
+# Rest with OpenAPI specification
 Date: January 5 2022
 
 # Designing Webservice API
@@ -63,11 +63,7 @@ Once you have the contract there are code generation tools that can be used to g
 
 It is best to put the spec file in a git repository for creating Pull Request for team members to review and version it.  Once the spec file has been agreed on you may also want to share it with others internally or to the external partners.
 
-Swagger UI utitlity can be used to share the spec in a more friendly way across teams.  Swagger UI can be (run locally)[https://swagger.io/docs/open-source-tools/swagger-ui/development/setting-up/]:
-
-![swaggerui-run-locally-example](images/swaggerui-localhost.png)
-
-The following are the basic steps for running a local instance as stated in the swagger.io link:
+Swagger UI utitlity can be used to share the spec in a more friendly way across teams.  Swagger UI can be [run locally](https://swagger.io/docs/open-source-tools/swagger-ui/development/setting-up/) using the following steps:
 
 ```
 git clone https://github.com/swagger-api/swagger-ui.git
@@ -76,6 +72,10 @@ npm run dev
 Wait a bit
 Open http://localhost:3200/
 ```
+
+Here is an example of a swaggerui instance running:
+
+![swaggerui-run-locally-example](images/swaggerui-localhost.png)
 
 This screenshot example is running a SwaggerUI using a SpringFlux with Swagger plugin with some selected OpenAPI yaml.  Based on the spec definition selection using the pulldown menu only that spec is shown in detail to the user:
 
