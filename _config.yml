@@ -2,5 +2,4 @@ title: Sonam's homepage
 description: This is my homepage
 tags: [Mermaid]
 mermaid: true
-plugins:
-  - jekyll-spaceship
+plugins: jekyll-spaceship
