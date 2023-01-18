@@ -42,7 +42,7 @@ public class Router {
         ...
 
 ```
-Here the Swagger endpoint starts with `@OpenAPIDefinition` annotation that marks the API title and version information.  It then uses the annotation `@RouterOperation` with its attributes to define the endpoints, the type of MediaType response it produces, and response codes.
+Here the Swagger endpoint starts with `@OpenAPIDefinition` annotation that adds the API title and version information.  It then uses the annotation `@RouterOperation` with its attributes to define the endpoints, the type of MediaType response it produces, and response codes.
 
 If you are programming with the servlet model using Springboot then your annotations may look a little different.  However, the idea is the same where the source code is annotated which generates the contract shown on the Swagger UI.
 
