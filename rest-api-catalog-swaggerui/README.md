@@ -3,6 +3,8 @@
 
 
 Here is a picture of a Swagger UI with a Rest api contract:
+
+
 ![Swagger UI with a Rest api](images/swagger.png)
 
 <br/>
