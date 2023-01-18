@@ -47,7 +47,9 @@ Here the Swagger endpoint starts with `@OpenAPIDefinition` annotation that adds 
 If you are programming with the servlet model using Springboot then your annotations may look a little different.  However, the idea is the same where the source code is annotated which generates the contract shown on the Swagger UI.
 
 
-The other method is to create the contract using OpenAPI specification which results in a `openapi.yaml` file for a yaml format.  I prefer this approach of creating the contract spec using a openapi.yaml because it separates out the specification from the codebase.  It also leads to a cleaner code.  Now, the contract can be shared among peers, between consumer and providers and be agreed upon using Github pull requests.  
+The other method is to create the contract using [OpenAPI](https://www.openapis.org/) specification in a yaml or json format.  I prefer this approach of creating the contract spec using a `openapi.yaml` in yaml format because it separates out the specification from the codebase.  It also leads to a cleaner code.   It can also be documented separately and used independently for any purpose without being tied to the implementation codebase. 
+
+Additionally, the openapi.yaml contract file can also be shared among peers, between consumer and providers and be agreed upon using Github pull requests.  
 
 
 ## Cataloging API
