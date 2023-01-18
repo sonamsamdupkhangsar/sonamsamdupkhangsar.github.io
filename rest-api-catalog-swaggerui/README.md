@@ -53,10 +53,39 @@ Additionally, the openapi.yaml contract file can also be shared among peers, bet
 
 
 ## Cataloging API
-You can use the manually created openapi.yaml contract files and host them on a SwaggerUI locally in your company.  It can be used to provide visibility into the apis and also serves as a catalogue. 
-I have used SwaggerUI on Java based projects and I find it easy to host a SwaggerUI using Spring WebFlux project.  
+There are a lot of Rest api that we build ourselves or other teams in a company but we don't know what exists in a company because we don't know where or what even exists and how to view them.  Yes, we can peek into git repositories but it would be hard to tell depending on how the Rest api is built and whether there is any specification file like a openapi.yaml file.  Usually, or mostly, there is lack of documentation.
 
-Using the following Spring configuration I can host a collection of apis or openapi.yaml specs:
+
+One way to alleviate this problem is to catalog the Rest api using Swagger UI.   You can run the Swagger UI either using the nodejs git repository or embed the Swagger library in Java like how I have done.
+
+For running nodejs Swagger UI:
+```
+git clone https://github.com/swagger-api/swagger-ui.git
+cd swagger-ui
+npm run dev
+```
+Then open to http://localhost:3200/ to see the Swagger UI running.
+
+The other option is to integrate the Swagger UI into Java on Spring WebFlux.  You need to use the following maven dependencies:
+```
+  <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-webflux-core</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-webflux-ui</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+```
+
+Once you have those in a Spring WebFlux project you can get a Swagger UI running by deploying the project using:
+```
+mvn spring-boot:run
+```
+
+To catalog the Rest api you will have to reference them in your folder somewhere. You can host the openapi.yaml files in the git repository folder `src/resources/static` or in specific folder `src/resources/static/v3/api-docs/myapi`.  You then need to reference them in your spring configuration as follows:
 
 ```
 
