@@ -108,7 +108,10 @@ springdoc:
       name: email-rest-service
 ```
 
-These apis are then visible locally on my machine:
+You will have to restart the Spring Webflux project with those configurations.  You should now be able to see all the apis on the Swagger UI catalog:
+
+
 ![swaggerui-run-locally-example](images/swagger-catalogue-api.png)
+
 
 You can navigate around the apis by selecting each definition listed on the pull down menu. 
