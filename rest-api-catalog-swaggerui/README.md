@@ -17,6 +17,7 @@ There are two ways of generating the contract that is diplayed on the Swagger UI
 
 For example, take the following example for Spring WebFlux project where the route is setup using functional programming:
 
+
 ```
 @Configuration
 @OpenAPIDefinition(info = @Info(title = "Account rest service Swagger doc", version = "1.0", description = "Documentation APIs v1.0"))
@@ -41,9 +42,10 @@ public class Router {
         ...
 
 ```
-Here the Swagger endpoint starts with `@OpenAPIDefinition` that marks the API title and version information.  It then uses the RouterOperation to define the endpoints, the type of MediaType response it produces, and response codes.
+Here the Swagger endpoint starts with `@OpenAPIDefinition` annotation that marks the API title and version information.  It then uses the annotation `@RouterOperation` with its attributes to define the endpoints, the type of MediaType response it produces, and response codes.
 
 If you are programming with the servlet model using Springboot then your annotations may look a little different.  However, the idea is the same where the source code is annotated which generates the contract shown on the Swagger UI.
+
 
 The other method is to create the contract using OpenAPI specification which results in a `openapi.yaml` file for a yaml format.  I prefer this approach of creating the contract spec using a openapi.yaml because it separates out the specification from the codebase.  It also leads to a cleaner code.  Now, the contract can be shared among peers, between consumer and providers and be agreed upon using Github pull requests.  
 
