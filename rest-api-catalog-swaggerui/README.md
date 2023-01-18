@@ -53,7 +53,7 @@ Additionally, the openapi.yaml contract file can also be shared among peers, bet
 
 
 ## Cataloging API
-There are a lot of Rest api that we build ourselves or other teams in a company but we don't know what exists in a company because we don't know where or what even exists and how to view them.  Yes, we can peek into git repositories but it would be hard to tell depending on how the Rest api is built and whether there is any specification file like a openapi.yaml file.  Usually, or mostly, there is lack of documentation.
+There are a lot of Rest api that we build ourselves or other teams in a company but we don't know what exists in a company because we don't know where or what even exists and how to view them.  Yes, we can peek into git repositories but it would be hard to tell depending on how the Rest api is built and whether there is any specification file like a openapi.yaml.  Usually, or mostly, there is a lack of documentation.
 
 
 One way to alleviate this problem is to catalog the Rest api using Swagger UI.   You can run the Swagger UI either using nodejs or embed the Swagger library in Java.
