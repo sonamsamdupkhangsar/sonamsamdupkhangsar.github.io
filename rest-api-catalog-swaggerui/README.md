@@ -1,5 +1,13 @@
 # Rest api catalog with Swagger UI
-[Swagger UI](https://swagger.io/tools/swagger-ui/) is used for displaying your Rest api contract.   It can also be used for testing endpoints that are defined on the contract.   The API that is displayed on the SwaggerUI can be generated using vendor provided libraries or with Swagger libraries.  You can also feed in a contract file into the SwaggerUI so it can catalog the Rest api.
+[Swagger UI](https://swagger.io/tools/swagger-ui/) is used for displaying your Rest api contract.   It can also be used for testing endpoints that are defined on the contract.   
+
+
+Here is a picture of a Swagger UI with a Rest api contract:
+![Swagger UI with a Rest api](images/swagger.png)
+
+<br/>
+The API that is displayed on the SwaggerUI can be generated using vendor provided libraries or with Swagger libraries.  Or you can also feed in a contract file into the SwaggerUI so it can catalog the Rest api.  
+
 
 ## Generating Swagger UI contract 
 There are two ways of generating the contract that is diplayed on the Swagger UI.  One of them is using the Swagger or vendor provided libraries.  The user can decorate the source code endpoints with Swagger annotations to mark the rest endpoints.  
