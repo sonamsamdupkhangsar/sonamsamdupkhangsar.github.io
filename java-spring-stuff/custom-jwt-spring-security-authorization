@@ -1,0 +1,4 @@
+# Custom Jwt token authorization in Spring application
+This document is about building a custom authentication that returns a JWT token to be used for authorization access to services.
+
+http://jwt-rest-service-mychart.backend.svc.cluster.local:80
