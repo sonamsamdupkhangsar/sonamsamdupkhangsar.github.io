@@ -1,5 +1,5 @@
 # Rest api catalog with Swagger UI
-[Swagger UI](https://swagger.io/tools/swagger-ui/) is used for displaying your Rest api contract.   It can also be used for testing endpoints that are defined on the contract.   
+[Swagger UI](https://swagger.io/tools/swagger-ui/) is used for displaying your Rest api contract.  It can also be used for testing endpoints that are defined on the contract.   
 
 
 Here is a picture of a Swagger UI with a Rest api contract:
