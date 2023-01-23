@@ -82,15 +82,7 @@ After creating the OpenAPI.yaml contract file there are code generation tools th
 
 It is best to put the spec file in a git repository for creating Pull Request for team members to review and version it.  Once the spec file has been agreed on you may also want to share it with others internally or to the external partners.
 
-Swagger UI utitlity can be used to share the spec in a more friendly way across teams.  Swagger UI can be [run locally](https://swagger.io/docs/open-source-tools/swagger-ui/development/setting-up/) using the following steps:
-
-```
-git clone https://github.com/swagger-api/swagger-ui.git
-cd swagger-ui
-npm run dev
-Wait a bit
-Open http://localhost:3200/
-```
+The Rest api specification file can be hosted on a Swagger UI tool whether it is run using nodejs or embedded inside a Java application.  See here for running it in [nodejs or Java](/rest-api-catalog-swaggerui/README.md#cataloging-api).
 
 Here is an example of a swaggerui instance running:
 
@@ -98,10 +90,6 @@ Here is an example of a swaggerui instance running:
 
 
 The above screenshot example is running a SwaggerUI using Spring  webflux with Swagger dependency and some OpenAPI yaml files from [my swaggerui git repository](https://github.com/sonamsamdupkhangsar/swaggerui)
-
-Users can select a OpenAPI on the `Select a definition` pulldown menu to load each individual Rest api specification:
-
-![swaggerui-spec-selection](images/spec-definition-selection.png)
 
 
 ## Contract Testing
