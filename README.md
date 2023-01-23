@@ -8,7 +8,7 @@ Some links
 5. [How to build custom authentication with Nginx Ingress](/custom-nginx-authentication-with-auth-url-annotation/README.md)
 6. [Catalogue Rest API with SwaggerUI](./rest-api-catalog-swaggerui/README.md)
 7. [OpenApi Rest design](./restapi-spec-with-openapi/README.md)
-8. [Contract testing](./consumer-provider-pacts/README.md)
+8. [Consumer driven contract testing](./rest-api-contract-driven-testing/README.md)
 
 Some personal stuff I am working on:
 
