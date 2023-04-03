@@ -1,4 +1,4 @@
-# Building custom yaml properties for Spring Framework based application
+# Building custom yaml properties for Spring application
 This document is about building a custom yaml properties to be used in a Spring Java based application.
 
 
