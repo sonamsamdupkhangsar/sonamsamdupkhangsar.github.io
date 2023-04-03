@@ -94,7 +94,7 @@ public class JwtPath {
 
 
 ## Example usage
-The following example shows how it is injected [test case](https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/java/me/sonam/security/YamlConfigTest.java#L38):
+The following example shows how it is injected in a [test case](https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/java/me/sonam/security/YamlConfigTest.java#L38):
 
 ```
     @Autowired
