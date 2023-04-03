@@ -20,7 +20,7 @@ jwtrequest:
 ```
 
 
-In the example shown above, my root property is `jwt-request` which has 3 child properties `in`, `out` and `jwt`.  For some context on the usage of this property I use the `in` and `out` property to map in my `jwt-validator` project to determine whether I need to generate or forward a `jwt` token during request matching of inbound and outbound http paths when a request is made internally by any application.  This is setup as a http filter interceptor.
+In the example shown above, my root property is `jwt-request` which has 3 child properties `in`, `out` and `jwt`.  For some context on the usage of this property I use the `in` and `out` property to map in my `jwt-validator` project to determine whether I need to generate or forward a `jwt` token during request matching of inbound and outbound http paths when a request is made internally by any application.  This is setup as a http filter.
 
 
 <br/>
