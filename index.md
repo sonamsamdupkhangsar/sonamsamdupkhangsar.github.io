@@ -11,7 +11,9 @@ Github Pages do not support mermaidjs rendering by default. Use
 6. [Catalogue Rest API with SwaggerUI](./rest-api-catalog-swaggerui/README.md)
 7. [OpenApi Rest design](./restapi-spec-with-openapi/README.md)
 8. [Consumer driven contract testing](./rest-api-contract-driven-testing/README.md)
-
+9. [Building custom Yaml properties in Spring based application](/java-spring-stuff/building-custom-yaml-properties/README.md)
+10. [Retrieve the custom error message from a webservice call on Spring Reactivce stack](/java-spring-stuff/get-error%20message-in-webclient-error/README.md)
+11. [Create custom page type in a Rest call on Spring Reactive stack](/java-spring-stuff/map-page-response-from-webclient/README.md) 
 
 Some personal stuff I am working on:
 
