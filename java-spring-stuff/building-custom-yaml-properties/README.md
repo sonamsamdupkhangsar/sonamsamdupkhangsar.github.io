@@ -2,7 +2,7 @@
 This document is about building a custom yaml properties to be used in a Spring Java based application.
 
 
-I find that it is best described by showing an example.   The following is a custom yaml property that I need to build for building a parent-child property relationship that is injected as a property object in a class.  This example comes from my [jwt-validator](https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/resources/application.yml#L76) project.
+I find that it is best described by showing an example.   The following is a custom yaml property that I need for building a parent-child property relationship that is injected as a property object in a class.  This example comes from my [jwt-validator](https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/resources/application.yml#L76) project.
 
 
 
