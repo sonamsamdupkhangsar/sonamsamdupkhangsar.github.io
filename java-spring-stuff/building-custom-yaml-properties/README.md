@@ -122,4 +122,5 @@ The test case output would look something like:
 
 ```
 
+## Conclusion
 That is it on how to build a custom yaml property and map to a Java object in a Spring application.
