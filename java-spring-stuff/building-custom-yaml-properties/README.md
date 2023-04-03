@@ -2,6 +2,7 @@
 This document is about building a custom yaml properties to be used in a Spring Java based application.
 
 
+## Yaml property
 I find that it is best described by showing an example.   The following is a custom yaml property that I need for building a parent-child property relationship that is injected as a property object in a class.  This example comes from my [jwt-validator](https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/resources/application.yml#L76) project.
 
 
@@ -23,7 +24,7 @@ jwtrequest:
 In the example shown above, my root property is `jwt-request` which has 3 child properties `in`, `out` and `jwt`.  For some context on the usage of this property I use the `in` and `out` property to map in my `jwt-validator` project to determine whether I need to generate or forward a `jwt` token during request matching of inbound and outbound http paths when a request is made internally by any application.  This is setup as a http filter.
 
 
-<br/>
+## Yaml property to Java mapping
 To build a custom Java object for the above yaml properties you can build a component object with the  `@ConfigurationProperties` annotation.  The following is 
 [my example](https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/main/java/me/sonam/security/util/JwtPath.java#L12) of how this is done:
 
@@ -92,6 +93,7 @@ public class JwtPath {
 ```
 
 
+## Example usage
 The following example shows how it is injected (test case)[https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/java/me/sonam/security/YamlConfigTest.java#L38]:
 
 ```
@@ -110,6 +112,8 @@ The following example shows how it is injected (test case)[https://github.com/so
 ...
     }
 ```
+
+## test output
 
 The test case output would look something like:
 ```
