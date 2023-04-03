@@ -9,15 +9,18 @@ I find that it is best described by showing an example.   The following is a cus
 ```
 jwtrequest:
   - in: /api/health/passheader
-    out: /jwts/accesstoken
+    out: /api/health/jwtreceiver
     jwt: request
   - in: /api/health/passheader
+    out: /api/health/liveness
+    jwt: forward
+  - in: /api/health/forwardtoken
     out: /api/health/jwtreceiver
     jwt: forward
 ```
 
 
-In the example shown above, my root property is `jwt-request` which has 3 child properties `in`, `out` and `jwt`.  For some context on the usage of this property I use the `in` and `out` property to map in my `jwt-validator` project to determine whether I need to generate a `jwt` token request for matching paths when a request is made internally by any application.  
+In the example shown above, my root property is `jwt-request` which has 3 child properties `in`, `out` and `jwt`.  For some context on the usage of this property I use the `in` and `out` property to map in my `jwt-validator` project to determine whether I need to generate or forward a `jwt` token during request matching of inbound and outbound http paths when a request is made internally by any application.  This is setup as a http filter interceptor.
 
 
 <br/>
@@ -88,5 +91,31 @@ public class JwtPath {
 }
 ```
 
+
+The following example shows how it is injected (test case)[https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/java/me/sonam/security/YamlConfigTest.java#L38]:
+
+```
+    @Autowired
+    private JwtPath jwtPath;
+
+    @Test
+    public void jwtPath() {
+        LOG.info("jwt.path: {}", jwtPath.getJwtRequest().size());
+        assertThat(jwtPath.getJwtRequest().size()).isEqualTo(3);
+
+        LOG.info("jwtPath[0].toString: {}", jwtPath.getJwtRequest().get(0).toString());
+        assertThat(jwtPath.getJwtRequest().get(0).getIn()).isEqualTo("/api/health/passheader");
+        assertThat(jwtPath.getJwtRequest().get(0).getOut()).isEqualTo("/api/health/jwtreceiver");
+        assertThat(jwtPath.getJwtRequest().get(0).getJwt()).isEqualTo("request");
+...
+    }
+```
+
+The test case output would look something like:
+```
+2023-04-03 09:28:25.874  INFO 55983 --- [           main] me.sonam.security.YamlConfigTest         : jwt.path: 3
+2023-04-03 09:28:25.917  INFO 55983 --- [           main] me.sonam.security.YamlConfigTest         : jwtPath[0].toString: JwtRequest{in='/api/health/passheader', out='/api/health/jwtreceiver', jwt='request'}
+
+```
 
 That is it on how to build a custom yaml property and map to a Java object in a Spring application.
