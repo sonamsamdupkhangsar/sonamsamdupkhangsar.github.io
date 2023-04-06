@@ -155,9 +155,9 @@ In the case of user-rest-service we have 2 horizontally scaled instances of the 
 
 
 ### Service Discovery by clients
-The application that is wanting to consume a registered service they have to use a loadbalanced web client for communication.  This loadbalanced client will enable to pick backend registered service that is chosen based on policies such as round-robin.  
+The consumer application of a Eureka service will have to use a loadbalanced web client for communication.  This loadbalanced client will enable to pick backend registered service that is chosen based on policies such as round-robin.  
 
-The following is a sample webclient configuration for a Spring based client:
+The following is a sample webclient configuration for a Spring based app:
 
 ```
 @Configuration
