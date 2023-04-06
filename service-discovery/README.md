@@ -7,10 +7,15 @@ The following is a diagram of service registeration and service discovery:
 
 ```mermaid
 flowchart TD    
-    A[Microservice A] --> |register| Eureka[Service Registry]
-    B[Microservice B] --> |register| Eureka
-    C[Microservice C] --> |register| Eureka
-    Eureka <-- D[Microservice D] 
+    A[Microservice A] 
+    B[Microservice B]
+    C[Microservice C]
+    Eureka[Service Registry]
+
+    A --> |register| Eureka[Service Registry]
+    B --> |register| Eureka
+    C --> |register| Eureka
+    Eureka --> D[Microservice D] 
 ``` 
 
 ## Service Registry
