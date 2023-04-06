@@ -16,7 +16,7 @@ flowchart TD
     A --> |register| Eureka
     B --> |register| Eureka
     C --> |register| Eureka
-    Eureka -- D
+    Eureka --- D
 ``` 
 
 ## Service Registry
