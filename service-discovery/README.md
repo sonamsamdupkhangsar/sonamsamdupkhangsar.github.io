@@ -16,7 +16,7 @@ flowchart TD
     A --> |register| Eureka
     B --> |register| Eureka
     C --> |register| Eureka
-    Eureka ---lookup Microservice A using service discovery-- D
+    Eureka ---lookup Microservice A using service discovery--- D
 ``` 
 
 ## Service Registry
