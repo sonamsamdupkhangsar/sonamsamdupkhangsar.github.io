@@ -9,7 +9,8 @@ The following is a diagram of service registeration and service discovery:
 flowchart TD    
     A[Microservice A] --> |register| Eureka[Service Registry]
     B[Microservice B] --> |register| Eureka
-    C[Microservice B] --> |register| Eureka
+    C[Microservice C] --> |register| Eureka
+    D[Microservice D] --> |service discovery or lookup Microservice C| Eureka
 ``` 
 
 ## Service Registry
