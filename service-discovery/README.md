@@ -170,7 +170,7 @@ public class WebClientConfig {
 }
 ```
 
-This webclient builder will be injected and used by the service that wants to communcate with a registered service on the Eureka server. The following is an example of a loadbalanced client making a service call to `authentication-rest-service` using this name in the http address as "http://authentication-rest-service" for `authenticationEp` variable
+This webclient builder will be injected into the service that wants to communcate with a registered service on the Eureka server. The following is an example of a loadbalanced client making a service call to `authentication-rest-service` using this name in the http address as "http://authentication-rest-service" for `authenticationEp` variable
 
 ```
    WebClient.ResponseSpec responseSpec = webClientBuilder.build()
