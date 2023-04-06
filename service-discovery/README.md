@@ -178,6 +178,12 @@ This webclient builder will be injected into the service that wants to communcat
 ```                            
 
 
+# Conclusion
+A service registry and its discovery provides a abstraction layer for applications that are looking to consume another service by name.  I find that is a great convenience because consumers don't have to know or beware of application url or the local cluster information and port to access another service.  
+
+Depending on the target platform there may already be server side load balancing features such as using a Kubernetes service.  But the discovery service also allows the application to be deployed on any platform to take advantage of client side load balancing features as well.
+
+In terms of disadvantages, the discovery service is another infrastructure that must be deployed and scaled as well.  But since it is used for lookup rather than processing any messages I do think the chances of it being unavailable are rare.
 
 
 
