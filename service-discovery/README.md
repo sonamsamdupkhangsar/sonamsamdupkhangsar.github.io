@@ -6,7 +6,7 @@ The following is a diagram of service registeration and service discovery:
 
 
 ```mermaid
-flowchart TD    
+flowchart LR    
     A[Microservice A] 
     B[Microservice B]
     C[Microservice C]
