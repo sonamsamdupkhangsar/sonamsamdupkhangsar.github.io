@@ -145,8 +145,10 @@ DEFAULT_ZONE: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOST}/eureka
 ```
 
 When you start the microservice it should register itself with the Eureka discovery service using the local profile again.  The following shows a `user-rest-service` that has now registered with the discovery service:
+
 ![services registered in Eureka](images/eureka-service-registered.png)
 
+In this example, you can find two instances of named `user-rest-service` that have registered with the discovery service and one `car-service` instance.  
 
 
 
