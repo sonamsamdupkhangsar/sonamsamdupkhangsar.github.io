@@ -18,8 +18,9 @@ flowchart TD
     A2 --> |register| Eureka
     B --> |register| Eureka
     C --> |register| Eureka
-    Eureka ---|lookup Microservice A| D
+    Eureka <--> D
 ``` 
+    Eureka ---|lookup Microservice A| D
 
 ## Service Registry
 Service registry is a framework used for registering services.  For example, a microservice can register themselves to a Eureka server.  Once registered the services can show up on the service registry using their configured name such as `hello-world-service` or by any other name. 
