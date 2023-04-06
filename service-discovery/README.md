@@ -6,8 +6,8 @@ This document shows how service registry and service discovery works.  It will u
 ```mermaid
 flowchart TD    
     A[Microservice A] --> |register| Eureka[Service Registry]
-    A[Microservice B] --> |register| Eureka
-    A[Microservice B] --> |register| Eureka
+    B[Microservice B] --> |register| Eureka
+    C[Microservice B] --> |register| Eureka
 ``` 
 
 ## Service Registry
