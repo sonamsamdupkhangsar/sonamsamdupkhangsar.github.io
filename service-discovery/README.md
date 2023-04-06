@@ -14,7 +14,8 @@ flowchart TD
     Eureka[Service Registry]
     D[Client service] 
 
-    A --> |register| Eureka
+    A1 --> |register| Eureka
+    A2 --> |register| Eureka
     B --> |register| Eureka
     C --> |register| Eureka
     Eureka ---|lookup Microservice A| D
