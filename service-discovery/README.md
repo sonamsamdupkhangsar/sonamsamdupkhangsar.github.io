@@ -17,7 +17,7 @@ flowchart TD
     subgraph "Microservice C"
     C[instance 1]
     end
-    subgraph registry
+    subgraph "Eureka Server"
     Eureka[Service Registry]
     end
     subgraph client
