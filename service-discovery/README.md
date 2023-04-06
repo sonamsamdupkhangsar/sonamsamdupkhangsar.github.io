@@ -155,6 +155,28 @@ In the case of user-rest-service we have 2 horizontally scaled instances of the 
 
 
 ### Service Discovery by clients
+The application that is wanting to consume a registered service they have to use a loadbalanced web client for communication.  This loadbalanced client will enable to pick backend registered service that is chosen based on policies such as round-robin.  
+
+The following is a sample webclient configuration for a Spring based client:
+
+```
+@Configuration
+public class WebClientConfig {
+    @LoadBalanced
+    @Bean
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
+    }
+}
+```
+
+This webclient builder will be injected and used by the service that wants to communcate with a registered service on the Eureka server. The following is an example of a loadbalanced client making a service call using this value "http://authentication-rest-service" for `authenticationEp` variable
+
+```
+   WebClient.ResponseSpec responseSpec = webClientBuilder.build().post().uri(authenticationEp).bodyValue(payloadMap).retrieve();
+```                            
+
+
 
 
 
