@@ -184,5 +184,6 @@ Depending on the target platform there may already be server side load balancing
 
 In terms of disadvantages, the discovery service is another infrastructure that must be deployed and scaled as well.  But since it is used for lookup rather than processing any messages I do think the chances of it being unavailable are rare.
 
+For this article, I have used my [discovery-service](https://github.com/sonamsamdupkhangsar/discovery-service) and [user-rest-service](https://github.com/sonamsamdupkhangsar/user-rest-service) projects.
 
 
