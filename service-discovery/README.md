@@ -28,7 +28,7 @@ flowchart TD
     B --> |register| Eureka
     C --> |register| Eureka
     Eureka <-->|lookup Microservice A| D
-    e --> mA
+
 ``` 
     
 
