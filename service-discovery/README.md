@@ -148,7 +148,11 @@ When you start the microservice it should register itself with the Eureka discov
 
 ![services registered in Eureka](images/eureka-service-registered.png)
 
-In this example, you can find two instances of named `user-rest-service` that have registered with the discovery service and one `car-service` instance.  The names that show under the "Application" column are used for connecting to them.  This ability to reference the service by name ensures that there is no need to know what dns, ip or port information are needed by the client that wants to consume their service.  
+In this example, you can find two instances of named `user-rest-service` that have registered with the discovery service and one `car-service` instance.  The names that show under the "Application" column are used for connecting to them.  This ability of a client to consume a service by their name ensures that there is no need to know  dns, ip or port information.  Consumers just need to know service name only.  
+
+In the case of user-rest-service we have 2 horizontally scaled instances of the service registered.  This becomes useful not only for server side load balancing but also for the client side load balancing which we will see later.
+
+
 
 
 
