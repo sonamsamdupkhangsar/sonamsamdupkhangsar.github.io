@@ -7,12 +7,22 @@ The following is a diagram of service registeration and service discovery:
 
 ```mermaid
 flowchart TD   
+    subgraph a
     A1[Microservice A instance 1]
     A2[Microservice A instance 2]
+    end
+    subgraph b
     B[Microservice B]
+    end
+    subgraph c
     C[Microservice C]
+    end
+    subgraph registry
     Eureka[Service Registry]
+    end
+    subgraph client
     D[Client service] 
+    end
 
     A1 --> |register| Eureka
     A2 --> |register| Eureka
@@ -20,7 +30,7 @@ flowchart TD
     C --> |register| Eureka
     Eureka <-->|lookup Microservice A| D
 ``` 
-    Eureka ---|lookup Microservice A| D
+    
 
 ## Service Registry
 Service registry is a framework used for registering services.  For example, a microservice can register themselves to a Eureka server.  Once registered the services can show up on the service registry using their configured name such as `hello-world-service` or by any other name. 
