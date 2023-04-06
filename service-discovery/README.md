@@ -23,11 +23,12 @@ flowchart TD
     C[instance 1]
     end
     
+    Eureka <-->|lookup Microservice A| D
     A1 --> |register| Eureka
     A2 --> |register| Eureka
     B --> |register| Eureka
     C --> |register| Eureka
-    Eureka <-->|lookup Microservice A| D
+    
 
 ``` 
     
