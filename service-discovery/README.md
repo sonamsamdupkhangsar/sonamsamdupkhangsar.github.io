@@ -101,8 +101,53 @@ You can then start your application with a mvn command using a local profile if 
 
 The following is a screenshot of the Eureka server running:
 
+
 ![Eureka Server](images/eureka-startup.png)
 
+## Service Registration for Eureka clients
+Applications and microservices that want to register to a Eureka discovery service  are the clients.  
+
+The process for service registration is similar to how the Eureka service registry was configured.  You would need to define a Eureka client dependency in the build configuration for the microservice.  The following example uses a Maven build in a pom file:
+```
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+```
+
+In the microservices's main application class where you have the `@SpringBootApplication` annotation you register this application as a Eureka client with `@EnableEurekaClient` as:
+
+```
+@EnableEurekaClient
+@SpringBootApplication
+public class Application {
+	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
+    
+    public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+    ...
+```
+
+The Eureka client needs to access the discovery server which can be done in the application.yaml file:
+
+```
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DEFAULT_ZONE}
+```
+
+The `${DEFAULT_ZONE}` value can be overridden in a profile specific file such as `application-local.yaml` file as:
+
+```
+DEFAULT_ZONE: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOST}/eureka
+```
+
+When you start the microservice it should register itself with the Eureka discovery service using the local profile again.  The following shows a `user-rest-service` that has now registered with the discovery service:
+![services registered in Eureka](images/eureka-service-registered.png)
 
 
-xtxv5795
+
+
+
