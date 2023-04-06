@@ -5,7 +5,13 @@ The following is a diagram of service registration and service discovery:
 
 
 ```mermaid
-flowchart TD       
+flowchart TD
+    subgraph client
+    D[Client service] 
+    end
+    subgraph e["Eureka Server"]
+    Eureka[Service Registry]
+    end
     subgraph mA["Microservice A"]
     A1[instance 1]
     A2[instance 2]
@@ -16,13 +22,7 @@ flowchart TD
     subgraph "Microservice C"
     C[instance 1]
     end
-    subgraph e["Eureka Server"]
-    Eureka[Service Registry]
-    end
-    subgraph client
-    D[Client service] 
-    end
-
+    
     A1 --> |register| Eureka
     A2 --> |register| Eureka
     B --> |register| Eureka
@@ -40,8 +40,10 @@ Service discovery is the process by which the clients will use the registry to c
 
 
 ## How does registry and discovery work in Spring based application using Eureka server?
-In a Spring based application there will need to be a Eureka registry that is running.
+In a Spring based application using a Eureka server for service registry will need to be running.
 This Eureka server will act as the registry server where all the microservices will registry themselves.  Once registered, any client wanting to connect and communincate with each can use service discovery to find an instance of that service to connect and communicate.  
+
+The actua
 
 
 
