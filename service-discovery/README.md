@@ -3,7 +3,6 @@ This document shows how service registry and service discovery works.  It will u
 
 The following is a diagram of service registration and service discovery:
 
- <pre class="mermaid">
 ```mermaid
 flowchart TD       
     subgraph mA["Microservice A"]
@@ -30,8 +29,7 @@ flowchart TD
     Eureka <-->|lookup Microservice A| D
 
 ``` 
-</pre>
-    
+
 
 ## What is a Service Registry?
 Service registry is a framework used for registering services.  For example, a microservice can register themselves to a Eureka server.  Once registered the services can show up on the service registry using their configured name such as `hello-world-service` or by any other name. 
