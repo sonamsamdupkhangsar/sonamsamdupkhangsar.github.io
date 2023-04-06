@@ -99,7 +99,7 @@ EUREKA_PASSWORD: test
 You can then start your application with a mvn command using a local profile if you have one:
 ```mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=local"```
 
-The following is a screenshot of the Eureka server running:
+The following is a screenshot of the Eureka server  on localhost:8761 we specified in application-local.yaml:
 
 
 ![Eureka Server](images/eureka-startup.png)
