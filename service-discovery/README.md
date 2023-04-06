@@ -100,6 +100,7 @@ You can then start your application with a mvn command using a local profile if 
 ```mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=local"```
 
 The following is a screenshot of the Eureka server running:
+
 ![Eureka Server](images/eureka-startup.png)
 
 
