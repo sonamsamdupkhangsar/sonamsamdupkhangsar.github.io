@@ -7,15 +7,15 @@ The following is a diagram of service registeration and service discovery:
 
 ```mermaid
 flowchart TD   
-    subgraph a
-    A1[Microservice A instance 1]
-    A2[Microservice A instance 2]
+    subgraph "Microservice A"
+    A1[instance 1]
+    A2[instance 2]
     end
-    subgraph b
-    B[Microservice B]
+    subgraph "Microservice B"
+    B[instance 1]
     end
-    subgraph c
-    C[Microservice C]
+    subgraph "Microservice C"
+    C[instance 1]
     end
     subgraph registry
     Eureka[Service Registry]
