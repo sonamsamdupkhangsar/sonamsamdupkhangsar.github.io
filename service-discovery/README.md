@@ -16,7 +16,7 @@ flowchart LR
     A --> |register| Eureka
     B --> |register| Eureka
     C --> |register| Eureka
-    D --> Eureka
+    Eureka -- D
 ``` 
 
 ## Service Registry
