@@ -11,11 +11,12 @@ flowchart TD
     B[Microservice B]
     C[Microservice C]
     Eureka[Service Registry]
+    D[Microservice D] 
 
     A --> |register| Eureka[Service Registry]
     B --> |register| Eureka
     C --> |register| Eureka
-    Eureka --> D[Microservice D] 
+    Eureka --> D
 ``` 
 
 ## Service Registry
