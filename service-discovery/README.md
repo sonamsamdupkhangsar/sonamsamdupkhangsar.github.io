@@ -16,7 +16,7 @@ flowchart TD
     subgraph "Microservice C"
     C[instance 1]
     end
-    subgraph "Eureka Server"
+    subgraph e["Eureka Server"]
     Eureka[Service Registry]
     end
     subgraph client
@@ -28,7 +28,7 @@ flowchart TD
     B --> |register| Eureka
     C --> |register| Eureka
     Eureka <-->|lookup Microservice A| D
-    
+    e --> mA
 ``` 
     
 
