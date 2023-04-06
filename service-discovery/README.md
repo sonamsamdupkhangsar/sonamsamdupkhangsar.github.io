@@ -7,7 +7,8 @@ The following is a diagram of service registeration and service discovery:
 
 ```mermaid
 flowchart TD   
-    A[Microservice A] 
+    A[Microservice A instance 1]
+    A[Microservice A instance 2]
     B[Microservice B]
     C[Microservice C]
     Eureka[Service Registry]
