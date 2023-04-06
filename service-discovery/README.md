@@ -6,6 +6,7 @@ The following is a diagram of service registration and service discovery:
 
 ```mermaid
 flowchart TD
+    D -->|lookup Microservice A| Eureka
     subgraph client
     D[Client service] 
     end
@@ -23,7 +24,7 @@ flowchart TD
     C[instance 1]
     end
     
-    D -->|lookup Microservice A| Eureka
+    
     A1 --> |register| Eureka
     A2 --> |register| Eureka
     B --> |register| Eureka
