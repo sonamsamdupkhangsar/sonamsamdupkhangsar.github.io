@@ -3,7 +3,7 @@ This document shows how service registry and service discovery works.  It will u
 
 The following is a diagram of service registration and service discovery:
 
-
+ <pre class="mermaid">
 ```mermaid
 flowchart TD       
     subgraph mA["Microservice A"]
@@ -30,6 +30,7 @@ flowchart TD
     Eureka <-->|lookup Microservice A| D
 
 ``` 
+</pre>
     
 
 ## What is a Service Registry?
