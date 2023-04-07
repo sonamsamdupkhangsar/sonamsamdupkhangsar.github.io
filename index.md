@@ -24,7 +24,7 @@ Some personal stuff I am working on:
 ### Kubernetes cluster
 The following diagram shows the request flow on a Kubernetes cluster.
 
-```mermaid
+```mermaid!
 flowchart TD
     A[user request] -.-> B(Load balancer)
     B -.-> C(DNS Server)
