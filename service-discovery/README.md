@@ -65,7 +65,7 @@ public class EurekaServiceApplication {
     ...
 ```
 
-In your configuration for the Eureka service registry do not forget to provide username and password credentials and other configurations such as hostname in your `application.yaml`:
+In the configuration for the Eureka service registry the username, password credentials and other configurations such as hostname can be included in the `application.yaml`:
 ```
 eureka:
   client:
@@ -85,7 +85,7 @@ spring:
       password: ${EUREKA_PASSWORD}
 ```      
 
-Based on your profile you can define those properties in the `application-{profile}.yaml` such as in a application-local.yaml:
+Based on profile these variables can be defined in a profile specific filie like `application-{profile}.yaml`, such as in a application-local.yaml file:
 ```
 defaultZone: http://localhost:8761
 EUREKA_USER: test
@@ -93,7 +93,7 @@ EUREKA_PASSWORD: test
 ```
 
 
-You can then start your application with a mvn command using a local profile if you have one:
+This should be plenty to start the application with a mvn command using the local profile:
 ```mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=local"```
 
 The following is a screenshot of the Eureka server  on localhost:8761 we specified in application-local.yaml:
