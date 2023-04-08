@@ -103,17 +103,17 @@ The following is a screenshot of the Eureka server on localhost:8761 specified i
 ![Eureka Server](images/eureka-startup.png)
 
 ### Service Registration for Eureka clients
-Applications and microservices that want to register to a Eureka discovery service  are the clients.  
+Applications and microservices that want to register to a Eureka discovery service  are the Eureka clients.  
 
-The process for service registration is similar to how the Eureka service registry was configured.  You would need to define a Eureka client dependency in the build configuration for the microservice.  The following example uses a Maven build in a pom file:
+The process for service registration is similar to how the Eureka service registry was configured.  This example again uses a maven build and will need the following dependency in pom file:
 ```
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
 ```
 
-In the microservices's main application class where you have the `@SpringBootApplication` annotation you register this application as a Eureka client with `@EnableEurekaClient` as:
+In the microservices's main application class include the `@EnableEurekaClient` with the  `@SpringBootApplication` annotation as following:
 
 ```
 @EnableEurekaClient
@@ -127,7 +127,7 @@ public class Application {
     ...
 ```
 
-The Eureka client needs to access the discovery server which can be done in the application.yaml file:
+This makes this Spring project a Eureka client which will need to access the discovery server and can be done in the application.yaml file:
 
 ```
 eureka:
@@ -141,8 +141,7 @@ The `${DEFAULT_ZONE}` value can be overridden in a profile specific file such as
 ```
 DEFAULT_ZONE: http://${EUREKA_USER}:${EUREKA_PASSWORD}@${EUREKA_HOST}/eureka
 ```
-
-When you start the microservice it should register itself with the Eureka discovery service using the local profile again.  The following shows a `user-rest-service` that has now registered with the discovery service:
+Once this Eureka client application or Spring application is started it will register itself with the Eureka registry.  The following shows a `user-rest-service` that has now registered with the discovery service:
 
 ![services registered in Eureka](images/eureka-service-registered.png)
 
