@@ -39,7 +39,7 @@ Service discovery is the process by which the clients will use the registry to c
 
 
 ## How does registry and discovery work in Spring based application using Eureka server?
-To use Eureka in Spring Java based application the Eureka server will need to be running.  This Eureka server will act as the registry server where all the microservices can register themselves.  Once registered, any client wanting to connect and communincate with each can use service discovery to find an instance of that service to establish communicatication.  
+To use Eureka in a Spring application the Eureka server component will need to be integrated within.  This Eureka server will act as the registry server where microservices can register themselves.  Once registered, any client wanting to connect and communicate with each can use service discovery to find an instance of that service to establish communication.  
 
 ### Service Registry server
 A Eureka server can be created using a Springboot application.  For a maven based build use the following dependency in a `pom.xml` file:
@@ -103,7 +103,7 @@ The following is a screenshot of the Eureka server on localhost:8761 specified i
 ![Eureka Server](images/eureka-startup.png)
 
 ### Service Registration for Eureka clients
-Applications and microservices that want to register to a Eureka discovery service  are the Eureka clients.  
+Applications and microservices that want to register to a Eureka registry service  are the Eureka clients.  
 
 The process for service registration is similar to how the Eureka service registry was configured.  This example again uses a maven build and will need the following dependency in pom file:
 ```
