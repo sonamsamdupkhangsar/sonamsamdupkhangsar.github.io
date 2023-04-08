@@ -1,5 +1,5 @@
 # Service Registry and Discovery for Microservices
-This document shows how service registry and service discovery works.  It will use a Spring based Java application with Netflix's Eureka registry service.   It will then show how clients and microservices can use discovery service for communicating with each other, without needing to know the actual ip or dns addresses.
+This document shows how service registry and service discovery works.  It will use a Spring based Java application with Netflix's Eureka registry service.   It will then show how microservices can register and how clients can use discovery service for communicating with each other, without needing to know the actual ip or dns addresses.
 
 The following is a diagram of service registration and service discovery:
 
@@ -39,18 +39,16 @@ Service discovery is the process by which the clients will use the registry to c
 
 
 ## How does registry and discovery work in Spring based application using Eureka server?
-To use Eureka in Spring Java based application the Eureak server will need to be running.  
-This Eureka server will act as the registry server where all the microservices can register themselves.  Once registered, any client wanting to connect and communincate with each can use service discovery to find an instance of that service to establish communicatication.  
+To use Eureka in Spring Java based application the Eureka server will need to be running.  This Eureka server will act as the registry server where all the microservices can register themselves.  Once registered, any client wanting to connect and communincate with each can use service discovery to find an instance of that service to establish communicatication.  
 
 ### Service Registry server
 To run a Eureka registry server, based on the build environment, a Eureka server dependency will need to be included in a project.  I use Maven as my build and so use the following dependency in my `pom.xml` file:
 
 ```
-
 <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-		</dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+</dependency>
 ```
 
 In the main application class where you have the `@SpringBootApplication` annotation you register this application as a Eureka server with `@EnableEurekaServer` as:
