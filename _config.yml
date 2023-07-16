@@ -39,8 +39,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
-#  - jekyll-spaceship
+#  - jekyll-feed
+  - jekyll-spaceship
 
 # Where things are
 jekyll-spaceship:
