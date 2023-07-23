@@ -1,4 +1,4 @@
-name: Build and Deploy to Github Pages
+name: Jekyll Deploy Action - Build and Deploy to Github Pages
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
       - uses: jeffreytse/jekyll-deploy-action@v0.4.0
         with:
           provider: 'github'
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # It's your Personal Access Token(PAT)
+          token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)
           repository: ''             # Default is current repository
           branch: 'gh-pages'         # Default is gh-pages for github provider
           jekyll_src: './'           # Default is root directory
