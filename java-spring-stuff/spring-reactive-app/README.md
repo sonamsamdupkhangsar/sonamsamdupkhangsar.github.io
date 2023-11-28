@@ -134,7 +134,6 @@ To run this project locally use ` ./gradlew bootRun` command.  You should see si
 > :app:bootRun
 ```
 
-
 ### Testing locally
 To call each of the endpoints you can follow this:
 
