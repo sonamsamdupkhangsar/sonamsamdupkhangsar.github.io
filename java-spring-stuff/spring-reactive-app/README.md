@@ -98,7 +98,7 @@ In this example, the PersonRepository interface is created which is a reactive c
 You can also specify custom sql query using the `@Query` annotation in your repository interface.
 
 ### Table creation
-I have included a [`schema.sql`](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/resources/schema.sql#L1) file that will create the table.  This file will be picked up by the [MySpringApplication](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/MySpringApplication.java#L19) class.
+I have included a [`schema.sql`](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/resources/schema.sql#L1) file for creating `Person` table.  This schema file will be executed by the [MySpringApplication](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/MySpringApplication.java#L19) class.
 
 ### Integration Testing endpoints
 I have included a test case that calls each of the endpoints in the project.
