@@ -115,7 +115,7 @@ You will need to create a [`application.yaml`](https://github.com/sonamsamdupkha
 ```
 Once you have the database created, use your username and password in the config above.  The `sslMode` property needs to be set in your config.
 
-To run this project locally use ` ./gradlew bootRun` command.  You should see similar output as below:
+To run this project locally use ` ./gradlew bootRun` command.  You should see similar output as below (some lines from output has been redacted):
 ```java
 > Task :app:bootRun
 
