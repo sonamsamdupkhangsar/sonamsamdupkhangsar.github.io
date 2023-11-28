@@ -159,7 +159,7 @@ curl  "http://localhost:8080/persons?page=0&size=100"
 
 
 ### Conclusion
-In this Readme.md file I showed how to create a Router, Handler, Business service and a Repository interface for building a Spring WebFlux application.   It uses H2 in-memory database for testing purposes but you can also use external Postgresql database.  
+In this Readme.md file I showed how to create a Router, Handler, Business service and a Repository interface for building a Spring WebFlux application.   It uses H2 in-memory database for testing purposes but you can also use an external Postgresql database.  
 
 This is a simple webapplication to give a easy introduction to Spring Webflux.  
 
