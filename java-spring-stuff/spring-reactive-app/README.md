@@ -1,4 +1,4 @@
-# Building Spring Reactive Applications
+# Building Spring WebFlux Application
 I enjoy using [Spring WebFlux](https://docs.spring.io/spring-framework/reference/web/webflux.html) for building web applications.  I like learning new ways of programming and sometimes that can come with frustrations too.  The good thing is that there is [StackOverFlow](https://stackoverflow.com/) to ask  or research similar questions.  I would say that Spring WebFlux improves a lot on the existing Servlet based way of building webapps because it provides asynchronous and message based programming to provide higher throughput of request/response.
 
 ## Demo `Person` Project
