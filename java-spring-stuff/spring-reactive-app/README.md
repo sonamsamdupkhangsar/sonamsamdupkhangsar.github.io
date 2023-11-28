@@ -26,14 +26,14 @@ Things we are going to build:
 ### Project Dependencies
 
 For project dependencies, I use the following: 
-1. Spring Webflux 
-2. H2 in-memory reactive database driver for testing
-3. Postgresql reacgive database driver for local running
-4. Junit-Jupiter for testing
+1. Spring Webflux .
+2. H2 in-memory reactive database driver for integration testing.
+3. Postgresql reactive database driver for local running.
+4. Junit-Jupiter for test framework.
 
 
 
-### Rest Endpoint using Router
+### Rest Endpoint using Route
 For Rest endpoint you can use the `RouterFunction` to build routes or api endpoints.  The following is the method to build a route endpoint taken from [Router](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/Router.java#L21) configuration:
 
 ```java
@@ -103,7 +103,7 @@ I have included a [`schema.sql`](https://github.com/sonamsamdupkhangsar/person/b
 ### Integration Testing endpoints
 I have included a test case that calls each of the endpoints in the project.
 
-### Running localy
+### Running locally
 You will need to create a [`application.yaml`](https://github.com/sonamsamdupkhangsar/person/blob/main/app/src/main/resources/application.yaml) file that points to your local Postgresql database.
 ```yaml
   r2dbc:
