@@ -100,7 +100,7 @@ You can also specify custom sql query using the `@Query` annotation in your repo
 ### Table creation
 I have included a [`schema.sql`](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/resources/schema.sql#L1) file that will create the table.  This file will be picked up by the [MySpringApplication](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/MySpringApplication.java#L19) class.
 
-### Testing
+### Integration Testing endpoints
 I have included a test case that calls each of the endpoints in the project.
 
 ### Running localy
@@ -134,6 +134,8 @@ To run this project locally use ` ./gradlew bootRun` command.  You should see si
 > :app:bootRun
 ```
 
+
+### Testing locally
 To call each of the endpoints you can follow this:
 
 1. Use `POST` to create a person by curl: 
