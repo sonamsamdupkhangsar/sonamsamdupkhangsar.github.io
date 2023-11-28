@@ -19,7 +19,7 @@ Things we are going to build:
 
 2. A Handler that calls the business service and handles the error from it.
 3. A business service to retrieve and store person information.
-4. Repository interfaces that interact with the database.
+4. Repository interface that interact with the database.
 5. Database Schema
 
 
@@ -96,6 +96,9 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, UUID> {
 
 In this example, the PersonRepository interface is created which is a reactive crud capable repository for working with [`Person`](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/db/repo/Person.java#L9) entity and its primary key is of type UUID.
 You can also specify custom sql query using the `@Query` annotation in your repository interface.
+
+### Table creation
+I have included a [`schema.sql`](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/resources/schema.sql#L1) file that will create the table.  This file will be picked up by the [MySpringApplication](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/MySpringApplication.java#L19) class.
 
 ### Testing
 I have included a test case that calls each of the endpoints in the project.
