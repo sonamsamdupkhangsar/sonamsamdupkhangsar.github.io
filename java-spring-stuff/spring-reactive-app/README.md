@@ -142,15 +142,15 @@ To call each of the endpoints you can follow this:
 curl -X POST http://localhost:8080/persons -H "Content-Type: application/json" -d '{"firstName": "Tashi", "lastName": "Tsering"}'
 ``` 
 
-2. Use `PUT` to update the person by curl: 
+2. Use `PUT` to update the person by curl (use the id retrieved from 1 curl call): 
 ```
-curl -X PUT http://localhost:8080/persons -H "Content-Type: application/json" -d '{"id": "9b1e29dc-cd4b-4c60-b436-9093189cd2b4", "firstName": "Tenzing", "lastName": "Lhamo"}'
+curl -X PUT http://localhost:8080/persons -H "Content-Type: application/json" -d '{"id": "<REPLACE_UUID_ID_HERE>", "firstName": "Tenzing", "lastName": "Lhamo"}'
 ```
    
 
 3. Use `GET` to retrieve by id:
 ```
-curl http://localhost:8080/persons/9b1e29dc-cd4b-4c60-b436-9093189cd2b4
+curl http://localhost:8080/persons/<REPLACE_UUID_ID_HERE>
 ```
 4. Use `Get` persons by page:
 ```
