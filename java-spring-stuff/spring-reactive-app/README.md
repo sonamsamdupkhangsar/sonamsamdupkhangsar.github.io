@@ -104,7 +104,7 @@ I have included a [`schema.sql`](https://github.com/sonamsamdupkhangsar/person/b
 I have included a test case that calls each of the endpoints in the project.
 
 ### Running localy
-You will need to create a `application.yaml` file that points to your local Postgresql database.
+You will need to create a [`application.yaml`](https://github.com/sonamsamdupkhangsar/person/blob/main/app/src/main/resources/application.yaml) file that points to your local Postgresql database.
 ```yaml
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/person
