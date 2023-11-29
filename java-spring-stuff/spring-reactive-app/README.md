@@ -39,17 +39,17 @@ For Rest endpoint you can use the `RouterFunction` to build routes or api endpoi
 ```java
 @Bean
     public RouterFunction<ServerResponse> route(Handler handler) {
-        return RouterFunctions.route(GET("/persons/{id}").and(accept(MediaType.APPLICATION_JSON)), handler::getPerson)
+        return RouterFunctions.route(GET("/persons/{id}"), handler::getPerson)
         ...
     }
 ```
 
-In this example we are creating a route to a `/persons/{id}` endpoint that is a Http GET which accepts a Json body (not needed but an example).  The handler method getPerson is called for this endpoint.  
+In this example we are creating a route to a `/persons/{id}` endpoint that is a Http GET.  The handler method getPerson is called for this endpoint.  
 
 ### Building the Handler
 The Handler will be used to handle the endpoint and call the business service method.  It can also add a layer to do any error handling as well.
 
-The following example shows the [handler](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/Handler.java#L26) for the `getPerson()` method:
+The following example shows the [handler](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/Handler.java#L27) for the `getPerson()` method:
 
 ```java
   public Mono<ServerResponse> getPerson(ServerRequest serverRequest) {
@@ -69,7 +69,7 @@ In this handler method example, I use the `personFinder` business service interf
 
 ### Business Service 
 The Java Interface `PersonFinder` is used by the handler above to call `getById` method.
-The following implementation of the `PersonFinder` implementation shows the `getById` [implementation](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/SimplePersonFinder.java#L22C4-L28C1).
+The following implementation of the `PersonFinder` implementation shows the `getById` [implementation](https://github.com/sonamsamdupkhangsar/person/blob/795aa94539256a43a3ed9df09903393ac0dc1dd2/app/src/main/java/org/mycompany/SimplePersonFinder.java#L26).
 
 ```java
  @Override
