@@ -101,7 +101,7 @@ You can also specify custom sql query using the `@Query` annotation in your repo
 I have included a [`schema.sql`](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/resources/schema.sql#L1) file for creating `Person` table.  This schema file will be executed by the [MySpringApplication](https://github.com/sonamsamdupkhangsar/person/blob/96e55aeba571c8cbe0b9391912f39ca544636ee1/app/src/main/java/org/mycompany/MySpringApplication.java#L19) class.
 
 ### Integration Testing endpoints
-I have included a test case that calls each of the endpoints in the project.
+I have included a [test case](https://github.com/sonamsamdupkhangsar/person/blob/795aa94539256a43a3ed9df09903393ac0dc1dd2/app/src/test/java/org/mycompany/PersonRestIntegTest.java#L32) that calls each of the endpoints in the project.
 
 ### Running locally
 You will need to create a [`application.yaml`](https://github.com/sonamsamdupkhangsar/person/blob/main/app/src/main/resources/application.yaml) file that points to your local Postgresql database.
