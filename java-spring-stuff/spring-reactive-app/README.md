@@ -142,7 +142,7 @@ To call each of the endpoints you can follow this:
 curl -X POST http://localhost:8080/persons -H "Content-Type: application/json" -d '{"firstName": "Tashi", "lastName": "Tsering"}'
 ``` 
 
-2. Use `PUT` to update the person by curl (use the id retrieved from the curl call above): 
+2. Use `PUT` to update the person by curl (use the id retrieved from the curl response from above): 
 ```
 curl -X PUT http://localhost:8080/persons -H "Content-Type: application/json" -d '{"id": "<REPLACE_UUID_ID_HERE>", "firstName": "Tenzing", "lastName": "Lhamo"}'
 ```
