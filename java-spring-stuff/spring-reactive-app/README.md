@@ -4,7 +4,7 @@ I enjoy using [Spring WebFlux](https://docs.spring.io/spring-framework/reference
 ## Demo `Person` Project
 For today I am going to build a `Person` rest service that interacts with a database to fetch person data.  This session will demonstrate how to build a web application using Spring WebFlux.
 
-This project is built using Gradle and can be found on [my git repo here](https://github.com/sonamsamdupkhangsar/person).
+This project is built using Gradle and can be found on [my git repo](https://github.com/sonamsamdupkhangsar/person).
 
 ### Project inventory
 Lets inventorize the things we need to build for this webapp.
