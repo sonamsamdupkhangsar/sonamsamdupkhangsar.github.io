@@ -69,7 +69,7 @@ In this handler method example, I use the `personFinder` business service interf
 
 ### Business Service 
 The Java Interface `PersonFinder` is used by the handler above to call `getById` method.
-The following implementation of the `PersonFinder` implementation shows the `getById` [implementation](https://github.com/sonamsamdupkhangsar/person/blob/795aa94539256a43a3ed9df09903393ac0dc1dd2/app/src/main/java/org/mycompany/SimplePersonFinder.java#L26).
+The following implementation of the `PersonFinder` shows the `getById` [implementation](https://github.com/sonamsamdupkhangsar/person/blob/795aa94539256a43a3ed9df09903393ac0dc1dd2/app/src/main/java/org/mycompany/SimplePersonFinder.java#L26).
 
 ```java
  @Override
