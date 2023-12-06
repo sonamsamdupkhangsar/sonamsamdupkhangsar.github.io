@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-12-06T18:15:51+00:00</updated><id>/feed.xml</id><title type="html">My Github pages</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/my-static-site/jekyll/update/2023/04/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-04-07T16:11:59+00:00</published><updated>2023-04-07T16:11:59+00:00</updated><id>/my-static-site/jekyll/update/2023/04/07/welcome-to-jekyll</id><content type="html" xml:base="/my-static-site/jekyll/update/2023/04/07/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG5BW3VzZXIgcmVxdWVzdF0gLS4tPiBCKExvYWQgYmFsYW5jZXIpXG5CIC0uLT4gQyhETlMgU2VydmVyKVxuQyAtLi0-IERbL2VtYWlsLXJlc3Qtc2VydmljZS5zb25hbS5jbG91ZC9dXG4lJS1cbnN1YmdyYXBoIGs4W0t1YmVybmV0ZXMgQ2x1c3Rlcl1cbnN1YmdyYXBoIGluZ3Jlc3NbSW5ncmVzc11cbkYoTmdpbnggQ29udHJvbGxlcilcbmVuZFxuJSUtXG5zdWJncmFwaCBhcHBbZW1haWwtcmVzdC1zZXJ2aWNlXVxuRyhLdWJlcm5ldGVzIFNlcnZpY2UpXG5HIC0tIHVzZXMgYXV0aElkIGhlYWRlciBmb3IgdXNlciBjb250ZXh0IC0tPiBIKGVtYWlsLXJlc3Qtc2VydmljZSBwb2QpXG5IIC0tIHZhbGlkYXRlIGp3dCB0b2tlbiB1c2luZyBqd3QtdmFsaWRhdG9yIC0tPiBIXG5lbmRcbiUlLVxuZW5kXG5GIC0uIDMgY2FsbHMtc2VydmljZSAuLT4gR1xuQiAtLi0-IGs4XG4lJS0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="my-static-site" /><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Consumer Provider Pacts!</title><link href="/my-static-site/my/posts/2022/12/10/consumer-provider-pacts.html" rel="alternate" type="text/html" title="Consumer Provider Pacts!" /><published>2022-12-10T16:11:59+00:00</published><updated>2022-12-10T16:11:59+00:00</updated><id>/my-static-site/my/posts/2022/12/10/consumer-provider-pacts</id><content type="html" xml:base="/my-static-site/my/posts/2022/12/10/consumer-provider-pacts.html">&lt;h1 id=&quot;openapi-contracts&quot;&gt;OpenAPI Contracts&lt;/h1&gt;
+&lt;p&gt;Once you have the OpenAPI yaml file that describes the endpoint, requests and the expected responses there will be a good want for verifying both consumer and the provider implementations are compliant with the openapi.yaml spec or any thing you have both agreed on.  For this there is &lt;a href=&quot;https://docs.pact.io/pact_broker&quot;&gt;Pact Broker&lt;/a&gt; that can record the consumer interaction for a given service and the provider can verify that it can meet the consumer expectations.&lt;/p&gt;
+
+&lt;p&gt;Pact Broker is a service that will store consumer contract or “pacts” on the broker.  It can be used by the provider to validate to ensure compliance with the consumer behavior. A service consumer of a Rest api can create pacts locally and push them to the pact broker.  Once the pact is registered that describes the behavior a provider of that service can run their integration test locally or in a build pipeline for service validation.&lt;/p&gt;</content><author><name></name></author><category term="my-static-site" /><category term="my" /><category term="posts" /><summary type="html">OpenAPI Contracts Once you have the OpenAPI yaml file that describes the endpoint, requests and the expected responses there will be a good want for verifying both consumer and the provider implementations are compliant with the openapi.yaml spec or any thing you have both agreed on. For this there is Pact Broker that can record the consumer interaction for a given service and the provider can verify that it can meet the consumer expectations.</summary></entry><entry><title type="html">Custom Nginx Authentication with auth-url-annotation</title><link href="/my-static-site/my/posts/2022/10/01/custom-nginx-authentication-with-auth-url-annotation.html" rel="alternate" type="text/html" title="Custom Nginx Authentication with auth-url-annotation" /><published>2022-10-01T16:11:59+00:00</published><updated>2022-10-01T16:11:59+00:00</updated><id>/my-static-site/my/posts/2022/10/01/custom-nginx-authentication-with-auth-url-annotation</id><content type="html" xml:base="/my-static-site/my/posts/2022/10/01/custom-nginx-authentication-with-auth-url-annotation.html">&lt;h1 id=&quot;customize-authentication-for-nginx-ingress-controller&quot;&gt;Customize Authentication for Nginx Ingress Controller&lt;/h1&gt;
+&lt;p&gt;This is a short content about implementing authentication with Nginx Ingress controller in a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;workflow&quot;&gt;Workflow&lt;/h2&gt;
+&lt;p&gt;I have a service named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user-rest-service&lt;/code&gt; that provides some user service.  Now, I want to secure it by checking user requests for a JWT token that is valid with a service called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jwt-rest-service&lt;/code&gt;.  For valid we will check that the token has not expired by time.&lt;/p&gt;
+
+&lt;p&gt;If the JWT token is not expired then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jwt-rest-service&lt;/code&gt; will return a Http 200 status.  If JWT is expired it will return a Http 400 response code.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The following is the workflow with numbers reflecting the workflow sequence:
+The following is a mermaidjs diagram:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFREXG5BW3VzZXIgcmVxdWVzdF0gLS0-IHxcIigxKSBodHRwIGF1dGhvcml6YXRpb24gYmVhcmVyIGp3dCBpbiBoZWFkZXJcInwgQltOaWdueCBJbmdyZXNzXVxuQiAtLi0-IHxcIigxLjEpIG5naW54IGluZ3Jlc3MgYXV0aC11cmwgand0IHZhbGlkYXRpb25cInwgQ3tqd3QtcmVzdC1zZXJ2aWNlfVxuQyAtLi0-IHxcIigxLjIpIGh0dHAgMjAwIHN0YXR1c1wifCBCXG5CIC0tPnxcIigyKSBzZWN1cmVkIHNlcnZpY2VcInwgRFt1c2VyLXJlc3Qtc2VydmljZV1cbkMgLS4tPiB8IGh0dHAgbm90IDIwMCBzdGF0dXMsIHVzZXIgcmVjZWl2ZWQgZXJyb3J8IEEiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To achieve this you can deploy your service &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jwt-rest-service&lt;/code&gt; first that validates the JWT token.  Then in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user-rest-service&lt;/code&gt; configuration your nginx ingress configuration must have the following annotation line:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;annotations:
+    nginx.ingress.kubernetes.io/auth-url: &quot;https://$host/oauth2/auth&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This nginx ingress configuration will ensure that before Nginx serves your request to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user-rest-service&lt;/code&gt; it will forward to the auth-url endpoint to validate the request.&lt;/p&gt;
+
+&lt;p&gt;There are instances where you might want to return a custom header from your authentication service.  The following example shows in Java a custom header returned in a handler code:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   return jwt.validate(serverRequest.headers().firstHeader(&quot;Authorization&quot;).replace(bearer, &quot;&quot;))
+                .flatMap(map -&amp;gt; {
+                    LOG.info(&quot;set subject in http header&quot;);
+                   return ServerResponse.ok()
+                            .contentType(MediaType.APPLICATION_JSON)
+                           .headers(httpHeaders -&amp;gt; httpHeaders.set(&quot;authId&quot;, map.get(&quot;subject&quot;)))
+                            .bodyValue(map);
+                })
+                .onErrorResume(throwable -&amp;gt;
+                    ServerResponse.status(HttpStatus.UNAUTHORIZED).contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(throwable.getMessage())
+                );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In order for Nginx to pass the header to the service being intercepted you add the following additional annotation line to get that header forwarded into your service:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;annotations:
+    nginx.ingress.kubernetes.io/auth-url: http://jwt-rest-service-mychart.backend.svc.cluster.local:80/validate
+    # pass authId header returned from jwt-rest-service validation of jwt token
+    nginx.ingress.kubernetes.io/auth-response-headers: authId
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a convenient way to implement a simple authentication service using Nginx ingress configuration.&lt;/p&gt;</content><author><name></name></author><category term="my-static-site" /><category term="my" /><category term="posts" /><summary type="html">Customize Authentication for Nginx Ingress Controller This is a short content about implementing authentication with Nginx Ingress controller in a Kubernetes cluster.</summary></entry><entry><title type="html">Building custom yaml properties in Spring Java based application</title><link href="/my-static-site/my/posts/2022/10/01/java-spring-building-custom-yaml-properties.html" rel="alternate" type="text/html" title="Building custom yaml properties in Spring Java based application" /><published>2022-10-01T16:11:59+00:00</published><updated>2022-10-01T16:11:59+00:00</updated><id>/my-static-site/my/posts/2022/10/01/java-spring-building-custom-yaml-properties</id><content type="html" xml:base="/my-static-site/my/posts/2022/10/01/java-spring-building-custom-yaml-properties.html">&lt;h1 id=&quot;building-custom-yaml-properties-for-spring-application&quot;&gt;Building custom yaml properties for Spring application&lt;/h1&gt;
+&lt;p&gt;This document is about building a custom yaml properties to be used in a Spring Java based application.&lt;/p&gt;
+
+&lt;h2 id=&quot;yaml-property&quot;&gt;Yaml property&lt;/h2&gt;
+&lt;p&gt;I find that it is best described by showing an example.   The following is a custom yaml property that I need for building a parent-child property relationship that is injected as a property object in a class.  This example comes from my &lt;a href=&quot;https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/resources/application.yml#L76&quot;&gt;jwt-validator&lt;/a&gt; project.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jwtrequest:
+  - in: /api/health/passheader
+    out: /api/health/jwtreceiver
+    jwt: request
+  - in: /api/health/passheader
+    out: /api/health/liveness
+    jwt: forward
+  - in: /api/health/forwardtoken
+    out: /api/health/jwtreceiver
+    jwt: forward
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the example shown above, my root property is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jwt-request&lt;/code&gt; which has 3 child properties &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;in&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;out&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jwt&lt;/code&gt;.  For some context on the usage of this property I use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;in&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;out&lt;/code&gt; property to map in my &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jwt-validator&lt;/code&gt; project to determine whether I need to generate or forward a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jwt&lt;/code&gt; token during request matching of inbound and outbound http paths when a request is made internally by any application.  This is setup as a http filter.&lt;/p&gt;
+
+&lt;h2 id=&quot;yaml-property-to-java-mapping&quot;&gt;Yaml property to Java mapping&lt;/h2&gt;
+&lt;p&gt;To build a custom Java object for the above yaml properties you can build a component object with the  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@ConfigurationProperties&lt;/code&gt; annotation.  The following is 
+&lt;a href=&quot;https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/main/java/me/sonam/security/util/JwtPath.java#L12&quot;&gt;my example&lt;/a&gt; of how this is done:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Component
+@ConfigurationProperties
+public class JwtPath {
+    private List&amp;lt;JwtRequest&amp;gt; jwtrequest = new ArrayList();
+
+    public List&amp;lt;JwtRequest&amp;gt; getJwtRequest() {
+        return jwtrequest;
+    }
+
+    private Map&amp;lt;String, List&amp;gt; map = new HashMap&amp;lt;&amp;gt;();
+
+    public JwtPath() {
+
+    }
+
+    public static class JwtRequest {
+        private String in;
+        private String out;
+        private String jwt;
+        public enum JwtOption {
+            forward, request, doNothing
+        }
+
+        public JwtRequest() {
+        }
+
+        public String getIn() {
+            return in;
+        }
+
+        public String getOut() {
+            return out;
+        }
+
+        public void setIn(String in) {
+            this.in = in;
+        }
+
+        public void setOut(String out) {
+            this.out = out;
+        }
+
+        public String getJwt() {
+            return jwt;
+        }
+
+        public void setJwt(String jwt) {
+            this.jwt = jwt;
+        }
+
+        @Override
+        public String toString() {
+            return &quot;JwtRequest{&quot; +
+                    &quot;in='&quot; + in + '\'' +
+                    &quot;, out='&quot; + out + '\'' +
+                    &quot;, jwt='&quot; + jwt + '\'' +
+                    '}';
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;example-usage&quot;&gt;Example usage&lt;/h2&gt;
+&lt;p&gt;The following example shows how it is injected in a &lt;a href=&quot;https://github.com/sonamsamdupkhangsar/jwt-validator/blob/0326c2fd1e22645c2c051fca6f504aaad0072eba/src/test/java/me/sonam/security/YamlConfigTest.java#L38&quot;&gt;test case&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    @Autowired
+    private JwtPath jwtPath;
+
+    @Test
+    public void jwtPath() {
+        LOG.info(&quot;jwt.path: {}&quot;, jwtPath.getJwtRequest().size());
+        assertThat(jwtPath.getJwtRequest().size()).isEqualTo(3);
+
+        LOG.info(&quot;jwtPath[0].toString: {}&quot;, jwtPath.getJwtRequest().get(0).toString());
+        assertThat(jwtPath.getJwtRequest().get(0).getIn()).isEqualTo(&quot;/api/health/passheader&quot;);
+        assertThat(jwtPath.getJwtRequest().get(0).getOut()).isEqualTo(&quot;/api/health/jwtreceiver&quot;);
+        assertThat(jwtPath.getJwtRequest().get(0).getJwt()).isEqualTo(&quot;request&quot;);
+...
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;test-output&quot;&gt;test output&lt;/h2&gt;
+
+&lt;p&gt;The test case output would look something like:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2023-04-03 09:28:25.874  INFO 55983 --- [           main] me.sonam.security.YamlConfigTest         : jwt.path: 3
+2023-04-03 09:28:25.917  INFO 55983 --- [           main] me.sonam.security.YamlConfigTest         : jwtPath[0].toString: JwtRequest{in='/api/health/passheader', out='/api/health/jwtreceiver', jwt='request'}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;That is it on how to build a custom yaml property and map to a Java object in a Spring application.&lt;/p&gt;</content><author><name></name></author><category term="my-static-site" /><category term="my" /><category term="posts" /><summary type="html">Building custom yaml properties for Spring application This document is about building a custom yaml properties to be used in a Spring Java based application.</summary></entry></feed>
