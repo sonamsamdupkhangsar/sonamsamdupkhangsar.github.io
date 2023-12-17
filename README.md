@@ -16,7 +16,7 @@ Some links
 
 Some personal stuff I am working on:
 User Signup and Authentication And Authorization using the following micrservice projects:
-* [Authorization server](https://github.com/sonamsamdupkhangsar/authorization-server) 
+* [Authorization server](https://github.com/sonamsamdupkhangsar/authorization) 
    - deploy newrelic-sealed.yaml: contains new relic license key.
 * [authentication-rest-service](https://github.com/sonamsamdupkhangsar/authentication-rest-service)
 * [user-rest-service](https://github.com/sonamsamdupkhangsar/user-rest-service)
