@@ -15,8 +15,19 @@ Some links
 12. [Service Discovery with Spring and Eureka](/service-discovery/README.md)
 
 Some personal stuff I am working on:
+User Signup and Authentication And Authorization using the following micrservice projects:
+* [Authorization server](https://github.com/sonamsamdupkhangsar/authorization-server) 
+   - deploy newrelic-sealed.yaml: contains new relic license key.
+* [authentication-rest-service](https://github.com/sonamsamdupkhangsar/authentication-rest-service)
+* [user-rest-service](https://github.com/sonamsamdupkhangsar/user-rest-service)
+* [account-rest-service](https://github.com/sonamsamdupkhangsar/account-rest-service)
+* [email-rest-service](https://github.com/sonamsamdupkhangsar/email-rest-service)
+* [role-rest-service](https://github.com/sonamsamdupkhangsar/role-rest-service)
+* [organzation-rest-service]((https://github.com/sonamsamdupkhangsar/organization-rest-service))
 
-1. [User signup flow](/microservices/user-signup-activation-flow/README.md) 
+
+[User signup flow](/microservices/user-signup-activation-flow/README.md) 
+
 
 ### Kubernetes cluster
 The following diagram shows the request flow on a Kubernetes cluster.
