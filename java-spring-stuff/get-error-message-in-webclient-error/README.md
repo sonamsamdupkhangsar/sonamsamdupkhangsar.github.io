@@ -39,3 +39,8 @@ EndpointHandler        : throwing error
 ```
 
 
+# Multiple occurances of org.json.JSONOBJECT on the class path:
+
+ testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+        exclude (group: 'com.vaadin.external.google', module: 'android-json')
+    }
