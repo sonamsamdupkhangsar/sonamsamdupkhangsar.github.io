@@ -27,6 +27,6 @@ To log into the Auth Manager click on `Login` and enter your username and passwo
 On success login you will see the following Admin page ![login success](images/login-success.png).
 
 
-
+In [next](../create-oauth2-app/README.md) I will create OAuth2 Client, organization and roles.
 
 

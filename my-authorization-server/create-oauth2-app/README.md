@@ -33,4 +33,4 @@ Now we will go back to the Clients again to find the one we created earlier ![cl
 
 We then move to assign the user that is associated to the organization to be assigned a role in this OAuth2 Client ![user role assigned](images/org-user-assigned-role-oauth2-client.png).  You can select the Role for this user by selecting the available roles and assign them one ![selected](images/org-user-assigned-role-oauth2-client-done.png).
 
-In this page, I created a organization, and a couple of roles and assigned them to the OAuth2 client.  In the next section, a Java app will use the client and get the roles. 
+In this page, I created a organization, and a couple of roles and assigned them to the OAuth2 client.  In the [next](../java-oauth2-app/README.md) section, a Java app will use the client and get the roles. 
