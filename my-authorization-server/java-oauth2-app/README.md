@@ -53,10 +53,14 @@ I will then start the Spring Boot app with gradle command `./gradlew bootRun --a
 2024-08-13T22:02:29.852-06:00  INFO 68748 --- [           main] oidc.MySpringBootApplication             : Started MySpringBootApplication in 1.529 seconds (process running for 1.766)
 ```
 
-This Spring Boot starts at port 5050 on localhost.  When I enter the `http://api-gateway:5050` I will be redirected to the Authorization Server to ![login](images/login.png).
+This Spring Boot starts at port 5050 on localhost.  When I enter the `http://api-gateway:5050` I will be redirected to the Authorization Server to enter my credentials.![login](images/login.png)
 
-After entering my credentials, I am redirected to my ![app](images/redirect.png).  And when I enter the `http://api-gateway:5050/private-data` url I can view the ![access-token](images/access-token.png).
+After entering my credentials, I am redirected to my oidc app. ![app](images/redirect.png)  
 
-To decode the access token I will use jwt.io web page to show the contents of the ![access-token](images/base64-decoded-token.png).  You can find the subject information, the audience, scopes and most importantly the role we assigned to the OAuth2 client of `Admin` role.
+And when I access the url `http://api-gateway:5050/private-data` I can view the access-token. ![access-token](images/access-token.png)
+
+To decode the access token I will use jwt.io web page to show the contents of the access-token.![access-token](images/base64-decoded-token.png)
+
+You can find the subject information, the audience, scopes and most importantly the role we assigned to the OAuth2 client of `Admin` role.
 
 
