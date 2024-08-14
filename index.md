@@ -18,7 +18,7 @@ Github Pages do not support mermaidjs rendering by default. Use
 13. [My Spring Authorization Server](/my-authorization-server/about/README.md)
 
 
-Some personal stuff I am working on:
+Some personal stuff I am working on (the repos are private so not accessible):
 
 User Signup and Authentication And Authorization using the following micrservice projects:
 * [Authorization server](https://github.com/sonamsamdupkhangsar/authorization) 
