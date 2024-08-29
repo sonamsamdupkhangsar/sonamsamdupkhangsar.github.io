@@ -1,6 +1,6 @@
 # My Authorization Server
 
-I started building OAuth2 Client management using [Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/index.html) while I was impacted with a rif from my previous employer in March of 2024.  I wanted to use that time to put a front-end to manage OAuth2 Client and for setting up user and assoiciated roles with an organization.  
+I started building my OAuth2 Client management using [Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/index.html) while I was impacted with a rif from my previous employer in March of 2024.  I wanted to use that time to put a front-end to manage OAuth2 Client and for setting up user and assoiciated roles with an organization.  
 
 I chose Spring Authorization Server because I enjoy programming in Java and using Spring Framework.  There is also a good support on StackOverflow that can help answer questions when running into difficulty with implementations.
 
@@ -8,3 +8,9 @@ My application is available at [authorization.sonam.cloud/issuer](https://author
 
 # How to pages
 I have put together few pages on how to [signup a user](../signup/README.md), [create a OAuth2 Client](../create-oauth2-app/README.md) with organization and roles.  I have also put a [Spring Boot app](../java-oauth2-app/README.md) that uses the user to sign-in and retrieve the roles.
+
+
+# Using it
+You are welcome to use my Authorization server for creating OAuth2 Client and signinup users.  This authorization server works only for a small use case and will need more extending.  This is a demo purposes for some and works well for my use case.
+
+I might add new features and may restart the server at any time, I will try to release enhancements in the evening hours MDT. 
