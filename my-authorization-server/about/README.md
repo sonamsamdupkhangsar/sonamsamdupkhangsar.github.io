@@ -11,6 +11,4 @@ I have put together few pages on how to [signup a user](../signup/README.md), [c
 
 
 # Using it
-You are welcome to use my Authorization server for creating OAuth2 Client and signinup users.  This authorization server works only for a small use case and will need more extending.  This is a demo purposes for some and works well for my use case.
-
-I might add new features and may restart the server at any time, I will try to release enhancements in the evening hours MDT. 
+You are welcome to use my Authorization server for creating OAuth2 Client and signinup users.  This authorization server works only for a small use case and will need more extending.  
