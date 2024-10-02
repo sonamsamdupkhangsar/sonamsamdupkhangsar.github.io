@@ -16,7 +16,7 @@ Github Pages do not support mermaidjs rendering by default. Use
 11. [Create custom page type in a Rest call on Spring Reactive stack](/java-spring-stuff/map-page-response-from-webclient/README.md) 
 12. [Service Discovery with Spring and Eureka](/service-discovery/README.md)
 13. [My Spring Authorization Server](/my-authorization-server/about/README.md)
-
+14. [Public Pkce Client (NextJS)](/pkce-public-client/README.md)
 
 Some personal stuff I am working on (the repos are private so not accessible):
 
