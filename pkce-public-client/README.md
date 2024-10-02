@@ -1,10 +1,14 @@
 # Pkce client in Nextjs
-This demo is about creating a Public PKCE client using NextJS with NextAuth api. There are plenty of articles about public PKCE but I haven't found a practical one that I could use myself so that motivated me to put this example together.
 
-For some official documentations, refer to [this](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce).
+I have come across several articles about creating public PKCE clients but are actually using secrets in their configurations.  Therefore, the purpose of this demo is to show that a public client can be created without using secrets.
+
+This demo will create a Public PKCE client using NextJS with NextAuth api. 
 
 
-This is a short demo which will use my authorization server, an OAuth2 server.  I will then show the Nextjs project that uses the NextAuth lirbary to login and get user information.
+For a official documentations on PKCE OAuth2 flow refer to [this](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce).
+
+
+This is a short demo which will use my [authorization server](https://authorization.sonam.cloud/issuer), an OAuth2 server.  I will then show the Nextjs project that uses the NextAuth lirbary to login and get user information.
 
 ## Create a Pkce Client in Authorization server
 First we need to create a Public PKCE client on the Authorization server.
