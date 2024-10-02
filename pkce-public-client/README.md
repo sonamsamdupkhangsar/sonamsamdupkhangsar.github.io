@@ -42,7 +42,7 @@ When the user clicks the `sign-in` button on the page above, the user will be di
 
  ![sign-in page](images/auth-sign-in-dummy-userid.png)
 
-After entering your credentials with successful authentication, you will be directed to authenticated `Home` page:
+After entering your credentials with successful authentication, you will be directed to authenticated `Home` page as shown here:
 
 ![home](images/authenticated-user-w-username.png) 
 
