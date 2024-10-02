@@ -77,7 +77,7 @@ export const authOptions: NextAuthOptions = {
       
 ```      
 
-The following code sets up the parameters to be sent for authorization request and the token request.
+The following code sets up the parameters to be sent for authorization request.
 For this public pkce client demo the main pieces are the code_challenge param setting `code_challenge: pkce.code_challenge` in authorization request which is sent to the OAuth2 server.
 
 ```
