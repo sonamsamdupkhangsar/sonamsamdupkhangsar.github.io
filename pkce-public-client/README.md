@@ -126,7 +126,7 @@ async function makeTokenRequest(context: any) {
   
 ```
 
-That is pretty much what is required to achive a Public PKCE client that does not use a client secret. 
+That is pretty much what is required to create a public PKCE client that does not use a client secret. 
 
  The public client will issue access tokens using my authorization server but will not issue refresh tokens at this time.
  
