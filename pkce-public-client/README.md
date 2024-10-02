@@ -2,7 +2,7 @@
 
 I have come across several articles about creating public PKCE clients but are actually using secrets in their configurations.  Therefore, the purpose of this demo is to show that a public client can be created without using secrets.
 
-This demo will create a Public PKCE client using NextJS with NextAuth api. 
+This demo will create a Public PKCE client using [NextJS](https://nextjs.org/) with [NextAuth](https://next-auth.js.org/) api. 
 
 
 For a official documentations on PKCE OAuth2 flow refer to [this](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce).
@@ -28,7 +28,7 @@ We have now created our OAuth2 client.  In the next step we create the consumer 
 
 ## NextJS client
 
-I am using [Nextauth](https://next-auth.js.org/) for authentication/authorization with my authorzation server.  I am going to refer to my [nextauth project](https://github.com/sonamsamdupkhangsar/next-auth-example) in my github repo as source for this demo.
+I am using Nextauth for authentication/authorization with my authorzation server.  I am going to refer to my [nextauth project](https://github.com/sonamsamdupkhangsar/next-auth-example) in my github repo as source for this demo.
 
 I will show the user interfaces first because I find that it helps to demonstrate the core concepts easier.
 
