@@ -12,17 +12,19 @@ This is a short demo which will use my [authorization server](https://authorizat
 
 ## Create a Pkce Client in Authorization server
 First we need to create a Public PKCE client on the Authorization server.
-The following is how I have configured on my [Authorization server](https://authzmanager.sonam.cloud) the ![PKCE client](images/public-pkce-client.png).
+The following image show my pkce client configured on my authorization server:
+
+ ![PKCE client](images/public-pkce-client.png).
 
 The client secret is actually a empty space but it is encrypted which I am not going to use.
 
-The client authentication method is done using `client_secret_basic` where it means that the client id is sent in the http header similar to basic authentication http header.  We also check `NONE` because we are using PKCE and we are going to be sending a `code_verifier` and a `code_challenge` pairs in our exchanges with the authorization server for receiving a access token.  For more on this `NONE` read [this](https://cloudentity.com/developers/basics/oauth-client-authentication/client-auth-set-to-none-with-pkce/).
+The client authentication method is done using `client_secret_basic` where it means that the client id is sent in the http header similar to basic authentication http header.  We also check `NONE` because we are using PKCE and we are going to be sending a `code_verifier` and a `code_challenge` pairs in our exchanges with the authorization server for receiving a token.  For more on this `NONE` read [this](https://cloudentity.com/developers/basics/oauth-client-authentication/client-auth-set-to-none-with-pkce/).
 
 The grant types I have are `AUTHORIZATION_CODE` where we exchange authorization code for getting a token. 
   
-I have also requested few scopes such as `OPENID`, `PROFILE` and `EMAIL` for displaying user information on the front end.
+I have also requested 3 scopes such as `OPENID`, `PROFILE` and `EMAIL` for displaying user information on the front end.
 
-The redirect uris refers to where to redirect after successful authentication on the authorization server.
+The redirect uris refers to where to redirect after successful authentication on my  authorization server.
 
 We have now created our OAuth2 client.  In the next step we create the consumer of the OAuth2 client.
 
@@ -44,7 +46,8 @@ After entering your credentials with successful authentication, you will be dire
 
 ![home](images/authenticated-user-w-username.png) 
 
-That is it and it looks simple and is doable with few lines of code.
+That is it and it looks simple and is doable with few lines of code.  The logged-in username is printed on the home page header.
+
 
 To achieve this, you have to configure few things and they are done in this [[..nextauth].ts](https://github.com/sonamsamdupkhangsar/next-auth-example/blob/b37f16d9bc77c6658baecc48625c7738aa51c2d6/pages/api/auth/%5B...nextauth%5D.ts#L15) file.
 
