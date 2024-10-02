@@ -95,8 +95,7 @@ authorization: {
        },       
 ```      
 
-
-When the user enters their credentials the application will forward the code verifier in the token request.  The following is the token endpoint configuration using Nextauth provider configuration.  This async function `const tokens = await makeTokenRequest(context)` is called which will send the token request. 
+Once the user enters their credentials in the login page the application will forward the code verifier in the token request.  The following is the token endpoint configuration using Nextauth provider configuration.  This async function `const tokens = await makeTokenRequest(context)` is called which will send the token request. 
 ```
  token: {
         url: auth_server + "/oauth2/token", 
