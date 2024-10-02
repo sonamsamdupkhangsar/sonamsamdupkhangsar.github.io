@@ -38,7 +38,7 @@ The following is the homepage for [nextauth.sonam.cloud](https://nextauth.sonam.
 
 ![nextauth homepage](images/sign-in.png).
 
-When the user clicks the `sign-in` button on the above image, the user will be directed to the authorization  sign-in page:
+When the user clicks the `sign-in` button on the page above, the user will be directed to the authorization  sign-in page:
 
  ![sign-in page](images/auth-sign-in-dummy-userid.png)
 
