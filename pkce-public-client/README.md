@@ -8,7 +8,7 @@ This demo will create a Public PKCE client using [NextJS](https://nextjs.org/) w
 For a official documentations on PKCE OAuth2 flow refer to [this](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce).
 
 
-This is a short demo which will use my [authorization server](https://authorization.sonam.cloud/issuer), an OAuth2 server.  I will then show the Nextjs project that uses the NextAuth lirbary to login and get user information.
+This is a short demo which will use my [authorization server](https://authorization.sonam.cloud/issuer), an OAuth2 server.  I will then show the Nextjs project that uses the NextAuth library to login and get user information.
 
 ## Create a Pkce Client in Authorization server
 First we need to create a Public PKCE client on the Authorization server.
@@ -26,7 +26,7 @@ I have also requested 3 scopes such as `OPENID`, `PROFILE` and `EMAIL` for displ
 
 The redirect uris refers to where to redirect after successful authentication on my  authorization server.
 
-We have now created our OAuth2 client.  In the next step we create the consumer of the OAuth2 client.
+We have now created our OAuth2 client.  In the next step we create the OAuth2 client in NextJS.
 
 ## NextJS client
 
