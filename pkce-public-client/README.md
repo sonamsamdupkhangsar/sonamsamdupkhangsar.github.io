@@ -62,7 +62,7 @@ In terms of workflow related to the pkce flow, the code_challenge is sent first 
 
 
 
-The following code sets up a custom OAuth2 provider which is using my [authorization server](https://authorization.sonam.cloud/issuer):
+The following code sets up a custom OAuth2 provider with my authorization server:
 ```
 export const authOptions: NextAuthOptions = {
 
@@ -76,8 +76,7 @@ export const authOptions: NextAuthOptions = {
       
 ```      
 
-The following code sets up the parameters to be sent for authorization request.
-For this public pkce client demo the main pieces are the code_challenge param setting `code_challenge: pkce.code_challenge` in authorization request which is sent to the OAuth2 server.
+In the next block of code I am setting the parameters for authorization request. For this public pkce client I am setting `code_challenge: pkce.code_challenge` in authorization request which is sent to the OAuth2 server.
 
 ```
 authorization: {
