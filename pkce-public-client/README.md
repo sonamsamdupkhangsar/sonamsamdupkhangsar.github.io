@@ -57,7 +57,7 @@ First, I am using the `pkce-challenge` api to generate a  `code_challenge` and a
 const pkce = await pkceChallenge(128)
 ```
 
-In terms of workflow related to the pkce flow, the code_challenge is sent first in the authorization request and then in the token request the code_verifier is sent to recevie a token from the authorization server.
+In terms of workflow related to the pkce flow, the code_challenge is sent first in the authorization request.  In the token request the code_verifier is sent to recevie a token from the authorization server.
 
 
 
