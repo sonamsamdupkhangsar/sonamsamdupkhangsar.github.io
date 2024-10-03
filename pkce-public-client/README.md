@@ -42,11 +42,12 @@ When the user clicks the `sign-in` button on the page above, the user will be di
 
  ![sign-in page](images/auth-sign-in-dummy-userid.png)
 
-After entering your credentials with successful authentication, you will be directed to authenticated `Home` page as shown here:
+After the user enters their credentials and with successful authentication, they will be directed to authenticated `Home` page as shown here:
 
 ![home](images/authenticated-user-w-username.png) 
 
-This completes the demo from the UI side. Once authenticated you can see the username being printed on the authenticate home page.
+The logged-in username is printed in the header for an authenticated session. This completes the demo from the UI side.
+
 
 To achieve this, you have to configure few things and they are done in this [[..nextauth].ts](https://github.com/sonamsamdupkhangsar/next-auth-example/blob/b37f16d9bc77c6658baecc48625c7738aa51c2d6/pages/api/auth/%5B...nextauth%5D.ts#L15) file.
 
@@ -107,7 +108,7 @@ Once the user enters their credentials in the login page the application will fo
     
  ```
 
-The `makenTokenRequest` mentioned above sets the code verfier and is shown below:
+The `makenTokenRequest` mentioned above sets the code verifier and is shown below:
 
  ```javascript
 async function makeTokenRequest(context: any) {
