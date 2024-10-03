@@ -1,6 +1,6 @@
 # Pkce client in Nextjs
 
-I have come across several articles about creating public PKCE clients but are actually using secrets in their configurations.  Therefore, the purpose of this demo is to show that a public client can be created without using secrets.
+I have come across several articles about creating public PKCE clients.  However, they end up  actually using the client secret in their configurations which is not what I would like to do.  Therefore, the purpose of this demo is to show that a public client can be created without using a client-secret.
 
 This demo will create a Public PKCE client using [NextJS](https://nextjs.org/) with [NextAuth](https://next-auth.js.org/) api. 
 
