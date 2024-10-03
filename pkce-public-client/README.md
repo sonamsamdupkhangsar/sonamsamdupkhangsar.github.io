@@ -16,7 +16,7 @@ The following image show my pkce client configured on my authorization server:
 
  ![PKCE client](images/public-pkce-client.png).
 
-The client secret is actually a empty space but it is encrypted which I am not going to use.
+In my above client configuration the client secret is actually a empty space but it is encrypted which I am not going to use.
 
 The client authentication method is done using `client_secret_basic` where it means that the client id is sent in the http header similar to basic authentication http header.  We also check `NONE` because we are using PKCE and we are going to be sending a `code_verifier` and a `code_challenge` pairs in our exchanges with the authorization server for receiving a token.  For more on this `NONE` read [this](https://cloudentity.com/developers/basics/oauth-client-authentication/client-auth-set-to-none-with-pkce/).
 
