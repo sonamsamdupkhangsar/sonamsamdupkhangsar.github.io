@@ -53,17 +53,17 @@ To achieve this, you have to configure few things and they are done in this [[..
 First, I am using the `pkce-challenge` api to generate a  `code_challenge` and a `code_verifier` with a S256 hashing algorithm as follows:
 
 
-```
+```javascript
 const pkce = await pkceChallenge(128)
 ```
 
-In terms of workflow related to the pkce flow, the code_challenge is sent first in the authorization request.  In the token request the code_verifier is sent to receive a token from the authorization server.
+In terms of workflow related to the pkce flow, the code_challenge is sent first in the authorization request when the sign-in button is clicked. Once the user enters their username/password in the sign-in page the code_verifier is sent to receive a token from the authorization server on a successful login.
 
 
 
 
 The following code sets up a custom OAuth2 provider with my authorization server:
-```
+```javascript
 export const authOptions: NextAuthOptions = {
 
   providers: [
@@ -78,7 +78,7 @@ export const authOptions: NextAuthOptions = {
 
 In the next block of code I am setting the parameters for authorization request. For this public pkce client I am setting `code_challenge: pkce.code_challenge` in authorization request which is sent to the OAuth2 server.
 
-```
+```javascript
 authorization: {
         url:  auth_server+ "/oauth2/authorize?myvalue=ajksdfkjsdfi",
         
@@ -88,13 +88,12 @@ authorization: {
           code_challenge: pkce.code_challenge,
           code_challenge_method: "S256",
           redirect_uri: host + "/api/auth/callback/myauth"
-        },
-      
-       },       
+        },      
+},       
 ```      
 
 Once the user enters their credentials in the login page the application will forward the code verifier in the token request.  The following is the token endpoint configuration using Nextauth provider configuration.  This async function `const tokens = await makeTokenRequest(context)` is called which will send the token request. 
-```
+```javascript
  token: {
         url: auth_server + "/oauth2/token", 
   
@@ -105,12 +104,12 @@ Once the user enters their credentials in the login page the application will fo
           console.log('tokens: {}', tokens)
           return { tokens }
           }         
-      },
+    
  ```
 
 The `makenTokenRequest` mentioned above sets the code verfier and is shown below:
 
- ```     
+ ```javascript
 async function makeTokenRequest(context: any) {
   console.log("params: ",context.params)
   console.log('host: ', host, ', nextAuthUrl: ', process.env.NEXTAUTH_URL)
