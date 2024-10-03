@@ -30,11 +30,11 @@ We have now created our OAuth2 client.  In the next step we create the OAuth2 cl
 
 ## NextJS client
 
-I am using Nextauth for authentication/authorization with my authorzation server.  I am going to refer to my [nextauth project](https://github.com/sonamsamdupkhangsar/next-auth-example) in my github repo as source for this demo.
+I am using Nextauth for authentication/authorization with my authorization server.  I am going to refer to my [nextauth project](https://github.com/sonamsamdupkhangsar/next-auth-example) in my github repo as source for this demo.
 
 I will show the user interfaces first because I find that it helps to demonstrate the core concepts easier.
 
-The following is the homepage for [nextauth.sonam.cloud](https://nextauth.sonam.cloud/): 
+I have deployed the repo on my server and is accessible at [nextauth.sonam.cloud](https://nextauth.sonam.cloud/): 
 
 ![nextauth homepage](images/sign-in.png).
 
