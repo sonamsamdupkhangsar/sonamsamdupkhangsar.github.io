@@ -9,10 +9,16 @@ Some links
 6. [Catalogue Rest API with SwaggerUI](./rest-api-catalog-swaggerui/README.md)
 7. [OpenApi Rest design](./restapi-spec-with-openapi/README.md)
 8. [Consumer driven contract testing](./rest-api-contract-driven-testing/README.md)
-9. [Building custom Yaml properties in Spring based application](/java-spring-stuff/building-custom-yaml-properties/README.md)
-10. [Retrieve the custom error message from a webservice call on Spring Reactivce stack](/java-spring-stuff/get-error-message-in-webclient-error/README.md)
-11. [Create custom page type in a Rest call on Spring Reactive stack](/java-spring-stuff/map-page-response-from-webclient/README.md) 
-12. [Service Discovery with Spring and Eureka](/service-discovery/README.md)
+9. Java Spring Stuff 
+
+    a. [Building custom Yaml properties in Spring based application](/java-spring-stuff/building-custom-yaml-properties/README.md)
+
+    b. [Retrieve the custom error message from a webservice call on Spring Reactivce stack](/java-spring-stuff/get-error-message-in-webclient-error/README.md)
+    
+    c. [Create custom page type in a Rest call on Spring Reactive stack](/java-spring-stuff/map-page-response-from-webclient/README.md) 
+    
+    d. [How to mock user for calling api that is secured using OAuth2 configuration](/java-spring-stuff/spring-security-jwt-mocking/README.md)
+10. [Service Discovery with Spring and Eureka](/service-discovery/README.md)
 
 Some personal stuff I am working on:
 User Signup and Authentication And Authorization using the following micrservice projects:
