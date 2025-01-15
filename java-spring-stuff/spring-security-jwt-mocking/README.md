@@ -1,5 +1,6 @@
 # How to test forwarding of Jwt access-token to other services
-This demo uses Spring security library `org.springframework.security:spring-security-test`
+This demo is about accessing a secured api that sits behind a secured service like OAuth2. This demo assumes the use
+of Spring security library `org.springframework.security:spring-security-test`
 
 I have a `/api/health/passheader` endpoint.  I also have another endpoint that receives the jwt access token at `/api/health/jwtreceiver`.
 As the name implies on the endpoints one gets a jwt header and forwards to another endpoint.
@@ -24,6 +25,8 @@ public class JwtHeaderPassIntegTest {
     @Autowired
     ApplicationContext context;
 
+    // For `client.mutateWith(mockJwt().jwt(jwt)).` to work you must set this up otherwise you
+    // will get a binding http client filter error
     @org.junit.jupiter.api.BeforeEach
     public void setup() {
         this.client = WebTestClient
@@ -66,9 +69,11 @@ public class JwtHeaderPassIntegTest {
         AssertionsForClassTypes.assertThat(recordedRequest.getMethod()).isEqualTo("GET");
     }
 
-    ```
+```
 
-This test cases project uses a token-filter library I wrote for forwarding tokens using configuration based on path mappings.  The path mapping yaml allows to write a configuration whether you want to forward tokens, generate new access-token using client-credential flow or to not forward any tokens to downstream api.   The yaml looks like:
+This test cases project uses a token-filter library I wrote for forwarding tokens using configuration based on path mappings.
+  The path mapping yaml allows to write a configuration whether you want to forward tokens, 
+  generate new access-token using client-credential flow or to not forward any tokens to downstream api.   The yaml looks like:
 
 ```
 requestFilters:
