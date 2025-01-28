@@ -33,7 +33,7 @@ This demo comes from my [friendships-api](https://github.com/sonamsamdupkhangsar
 
 I have some endpoint at path `/friendships` that is secured using Spring Security.  In order to access these endpoints I need to do some mocking of JWT tokents to access those endpoints. I also want to send some user attributes in the token like userId of UUID type.
 
-I am going to pick my simplest endpoint which checks if 2 users are friends found at path `/friendships/{userId}`.  In this test case I use MockWebServer to mock responses for Rest callouts which is not used in this particular test.  The following is my Java code:
+I am going to pick my simplest endpoint which checks if the logged-in user is friends with the supplied userId with path `/friendships/{userId}`.  In this test case I use MockWebServer to mock responses for Rest callouts which is not used in this particular test.  The following is my Java code:
 
 
 ```
