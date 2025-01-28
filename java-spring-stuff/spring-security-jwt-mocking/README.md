@@ -1,123 +1,226 @@
 # How to test forwarding of Jwt access-token to other services
-This demo is about accessing a secured api that sits behind a secured service like OAuth2. This demo assumes the use
-of Spring security library `org.springframework.security:spring-security-test`
+This demo is about testing a Rest api that is secured using Spring Security.
 
-I have a `/api/health/passheader` endpoint.  I also have another endpoint that receives the jwt access token at `/api/health/jwtreceiver`.
-As the name implies on the endpoints one gets a jwt header and forwards to another endpoint.
+The build configuration for this demo uses Gradle kotlin:
+```
+plugins {
+    // Apply the java-library plugin for API and implementation separation.
+    `java-library`
+    id("org.springframework.boot") version "3.4.1"  // Replace with your desired version
+    id("io.spring.dependency-management") version "1.1.6" // Dependency management plugin
+    id("maven-publish")
+}
 
-This is about testing so I will write a test case that shows this.  I have written a following test case:
+dependencyManagement {
+    imports {
+        mavenBom ("org.springframework.cloud:spring-cloud-dependencies:2024.0.0")
+    }
+}
+
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
+
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+  
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    testImplementation("org.springframework.security:spring-security-test")
+//redacted other dependencies that are not needed
+}
+```
+
+This demo comes from my [friendships-api](https://github.com/sonamsamdupkhangsar/friendships-api) repository.
+
+I have some endpoint at path `/friendships` that is secured using Spring Security.  In order to access these endpoints I need to do some mocking of JWT tokents to access those endpoints. I also want to send some user attributes in the token like userId of UUID type.
+
+I am going to pick my simplest endpoint which checks if 2 users are friends found at path `/friendships/{userId}`.  In this test case I use MockWebServer to mock responses for Rest callouts which is not used in this particular test.  The following is my Java code:
+
 
 ```
+/**
+ * this will test the end-to-end from the Router to business service to entity persistence using in-memory db.
+ */
 @EnableAutoConfiguration
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = {Application.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = {Application.class, TestConfig.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ExtendWith(MockitoExtension.class)
-public class JwtHeaderPassIntegTest {
-    private static final Logger LOG = LoggerFactory.getLogger(JwtHeaderPassIntegTest.class);
+public class FriendshipRouterIntegTest {
+    private static final Logger LOG = LoggerFactory.getLogger(FriendshipRouterIntegTest.class);
+
+    private static MockWebServer mockWebServer;
+    @MockitoBean
+    ReactiveJwtDecoder jwtDecoder;
+
+    @Value("${friendshipEndpoint}")
+    private String friendshipEndpoint;
 
     @Autowired
-    private WebTestClient client;
-
-    @MockBean
-    ReactiveJwtDecoder jwtDecoder;
-    private static MockWebServer mockWebServer;
+    private WebTestClient webTestClient;
 
     @Autowired
     ApplicationContext context;
 
-    // For `client.mutateWith(mockJwt().jwt(jwt)).` to work you must set this up otherwise you
-    // will get a binding http client filter error
+    @Autowired
+    private FriendshipRepository friendshipRepository;
+
     @org.junit.jupiter.api.BeforeEach
     public void setup() {
-        this.client = WebTestClient
+        this.webTestClient = WebTestClient
                 .bindToApplicationContext(this.context)
                 // add Spring Security test Support
                 .apply(springSecurity())
                 .configureClient()
+                //   .filter(basicAuthentication("user", "password"))
                 .build();
     }
-    
-    /**
-     * this method tests http delete method overridden for calling '/api/health/passheader -> '/api/health/jwtreceiver'
-     * @throws InterruptedException
-     */
 
-    @Test
-    public void passExistingHeaderJwtForDelete() throws InterruptedException {
-        LOG.info("readiness delete requires jwt, should get bad request");
+    @BeforeAll
+    static void setupMockWebServer() throws IOException {
+        mockWebServer = new MockWebServer();
+        mockWebServer.start();
 
-        UUID userId = UUID.randomUUID();
-        final String authenticationId = "dave";
+        LOG.info("host: {}, port: {}", mockWebServer.getHostName(), mockWebServer.getPort());
+    }
+
+    @AfterAll
+    public static void shutdownMockWebServer() throws IOException {
+        LOG.info("shutdown and close mockWebServer");
+        mockWebServer.shutdown();
+        mockWebServer.close();
+    }
+
+    @DynamicPropertySource
+    static void properties(DynamicPropertyRegistry r) throws IOException {
+        r.add("friendshipEndpoint", () -> "http://localhost:"+ mockWebServer.getPort());
+        r.add("userEndpoint", () -> "http://localhost:"+ mockWebServer.getPort());
+        r.add("notificationEndpoint", ()->"http://localhost:"+mockWebServer.getPort());
+    }
+
+  // this isFriends() just setups the test case.  The actual Rest call is "private void isFriends(Jwt jwt, UUID userId, boolean isFriends)"
+ @Test
+    public void isFriends() throws InterruptedException {
+        LOG.info("isFriends endpoint test");
+
+        //for this set friendId to hardcoded value so that we can pass this friendId into jwt
+        //which will accept the friendship, user cannot accept only the friend in the friendship can
+        UUID userId = UUID.fromString("5d8de63a-0b45-4c33-b9eb-d7fb8d662107");
+        String authenticationId = "dave";
         Jwt jwt = jwt(authenticationId, userId);
-        Mockito.when(this.jwtDecoder.decode(ArgumentMatchers.anyString())).thenReturn(Mono.just(jwt));
+        when(this.jwtDecoder.decode(anyString())).thenReturn(Mono.just(jwt));
 
-        final String jwtString= "eyJraWQiOiJlOGQ3MjIzMC1iMDgwLTRhZjEtODFkOC0zMzE3NmNhMTM5ODIiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3NzI1ZjZmZC1kMzk2LTQwYWYtOTg4Ni1jYTg4YzZlOGZjZDgiLCJhdWQiOiI3NzI1ZjZmZC1kMzk2LTQwYWYtOTg4Ni1jYTg4YzZlOGZjZDgiLCJuYmYiOjE3MTQ3NTY2ODIsImlzcyI6Imh0dHA6Ly9teS1zZXJ2ZXI6OTAwMSIsImV4cCI6MTcxNDc1Njk4MiwiaWF0IjoxNzE0NzU2NjgyLCJqdGkiOiI0NDBlZDY0My00MzdkLTRjOTMtYTZkMi1jNzYxNjFlNDRlZjUifQ.fjqgoczZbbmcnvYpVN4yakpbplp7EkDyxslvar5nXBFa6mgIFcZa29fwIKfcie3oUMQ8MDWxayak5PZ_QIuHwTvKSWHs0WL91ljf-GT1sPi1b4gDKf0rJOwi0ClcoTCRIx9-WGR6t2BBR1Rk6RGF2MW7xKw8M-RMac2A2mPEPJqoh4Pky1KgxhZpEXixegpAdQIvBgc0KBZeQme-ZzTYugB8EPUmGpMlfd-zX_vcR1ijxi8e-LRRJMqmGkc9GXfrH7MOKNQ_nu6pc6Gish2v_iuUEcpPHXrfqzGb9IHCLvfuLSaTDcYKYjQaEUAp-1uDW8-5posjiUV2eBiU48ajYg";
+        UUID friendId = UUID.randomUUID();
+        LOG.info("friendId: {}",friendId);
 
-        final String jwtReceiver = " {\"message\":\"jwt received endpoint\"}";
-        mockWebServer.enqueue(new MockResponse().setHeader("Content-Type", "application/json").setResponseCode(200).setBody(jwtReceiver));//"Account created successfully.  Check email for activating account"));
+        Friendship friendship = new Friendship(LocalDateTime.now(), LocalDateTime.now(), userId, friendId, true);
+        friendshipRepository.save(friendship).subscribe();
 
-        LOG.info("call passheader endpoint");
-        client.mutateWith(mockJwt().jwt(jwt)).delete().uri("/api/health/passheader")
-            //    .headers(addJwt(jwt))
-                .headers(httpHeaders -> httpHeaders.setBearerAuth(jwtString))
-                .exchange().expectStatus().isOk();
+        LOG.info("verify user {} is friend with {}", userId, friendId);
+        isFriends(jwt, friendId, true);
 
-        RecordedRequest recordedRequest = mockWebServer.takeRequest();
+        LOG.info("delete all friendships before testing another one");
+        friendshipRepository.deleteAll().subscribe();
 
-        LOG.info("should be acesstoken path for recordedRequest: {}", recordedRequest.getPath());
-        AssertionsForClassTypes.assertThat(recordedRequest.getPath()).startsWith("/api/health/jwtreceiver");
-        AssertionsForClassTypes.assertThat(recordedRequest.getMethod()).isEqualTo("GET");
+        // swap userId and friendId
+        friendId = UUID.fromString("5d8de63a-0b45-4c33-b9eb-d7fb8d662107");
+        authenticationId = "dave";
+        jwt = jwt(authenticationId, friendId);
+        when(this.jwtDecoder.decode(anyString())).thenReturn(Mono.just(jwt));
+
+        userId = UUID.randomUUID();
+        LOG.info("friendId: {}",friendId);
+
+        friendship = new Friendship(LocalDateTime.now(), LocalDateTime.now(), friendId, userId, true);
+        friendshipRepository.save(friendship).subscribe();
+
+        LOG.info("verify user {} is friend with {}", userId, friendId);
+        isFriends(jwt, userId, true);
+
+        LOG.info("delete all friendships before testing another one");
+        friendshipRepository.deleteAll().subscribe();
+
+        friendship = new Friendship(LocalDateTime.now(), LocalDateTime.now(), friendId, userId, false);
+        friendshipRepository.save(friendship).subscribe();
+
+        LOG.info("verify user {} is friend with {}", userId, friendId);
+        isFriends(jwt, userId, false);
+    }
+
+    private void isFriends(Jwt jwt, UUID userId, boolean isFriends) {
+        LOG.info("check user is friends userId: {}", userId);
+
+        String endpoint = "/friendships/{userId}".replace("{userId}", userId.toString());
+
+        EntityExchangeResult<String> entityExchangeResult = webTestClient.
+                mutateWith(mockJwt().jwt(jwt)).get().uri(endpoint)
+                .headers(addJwt(jwt))
+                .accept(MediaType.APPLICATION_NDJSON)
+                .exchange().expectStatus().isOk().expectBody(String.class)
+                .returnResult();
+
+        LOG.info("response is {}", entityExchangeResult.getResponseBody());
+
+        assertThat(entityExchangeResult.getResponseBody()).isEqualTo("{\"message\":"+isFriends+"}");
+    }
+
+    private Jwt jwt(String subjectName, UUID userId) {
+        return new Jwt("token", null, null,
+                Map.of("alg", "none"), Map.of("sub", subjectName, "userId", userId.toString()));
+    }
+
+    private Consumer<HttpHeaders> addJwt(Jwt jwt) {
+        return headers -> headers.setBearerAuth(jwt.getTokenValue());
+    }
+```
+
+
+# Explanation of the test code
+The setup block
+```
+@org.junit.jupiter.api.BeforeEach 
+   public void setup() {
+``` 
+
+is necessary for the `webTestClient.mutateWith(mockJwt().jwt(jwt)).get()` call to work otherwise you can get http client filter errors or null pointers.
+
+
+The actual Rest call out is this block 
+```
+private void isFriends(Jwt jwt, UUID userId, boolean isFriends) {
+        LOG.info("check user is friends userId: {}", userId);
+
+        String endpoint = "/friendships/{userId}".replace("{userId}", userId.toString());
+
+        EntityExchangeResult<String> entityExchangeResult = webTestClient.
+                mutateWith(mockJwt().jwt(jwt)).get().uri(endpoint)
+                .headers(addJwt(jwt))
+                .accept(MediaType.APPLICATION_NDJSON)
+                .exchange().expectStatus().isOk().expectBody(String.class)
+                .returnResult();
+```                
+
+When the test executes, it passes the Jwt to the service and the service can now access the userId attribute for the logged-in user.  I have a `getLoggedInUserId()` method in my business service to extract userId that is in the Jwt token that is this:
+```
+ public Mono<UUID> getLoggedInUserId() {
+        return ReactiveSecurityContextHolder.getContext().flatMap(securityContext -> {
+            org.springframework.security.core.Authentication authentication = securityContext.getAuthentication();
+            Jwt jwt = (Jwt) authentication.getPrincipal();
+            String userIdString = jwt.getClaim("userId");
+            LOG.debug("claims: {}, jwt: {}, security context userId: {}", jwt.getClaims(), jwt,
+                    userIdString);
+
+            UUID userId = UUID.fromString(userIdString);
+
+            return Mono.just(userId);
+        });
     }
 
 ```
 
-This test cases project uses a token-filter library I wrote for forwarding tokens using configuration based on path mappings.
-  The path mapping yaml allows to write a configuration whether you want to forward tokens, 
-  generate new access-token using client-credential flow or to not forward any tokens to downstream api.   The yaml looks like:
+The following is a sample output when the test case is run:
+```
+2025-01-28T08:46:07.174-07:00  INFO 64703 --- [    Test worker] m.s.f.FriendshipRouterIntegTest          : check user is friends userId: 6e97eb8c-f0af-408e-9802-d5026485083a
+2025-01-28T08:46:07.260-07:00  INFO 64703 --- [     parallel-3] me.sonam.friendships.FriendshipService   : isFriends with 6e97eb8c-f0af-408e-9802-d5026485083a
+2025-01-28T08:46:07.261-07:00 DEBUG 64703 --- [     parallel-3] me.sonam.friendships.FriendshipService   : claims: {userId=5d8de63a-0b45-4c33-b9eb-d7fb8d662107, sub=dave}, jwt: org.springframework.security.oauth2.jwt.Jwt@bbd01fb9, security context userId: 5d8de63a-0b45-4c33-b9eb-d7fb8d662107
+2025-01-28T08:46:07.346-07:00  INFO 64703 --- [    Test worker] m.s.f.FriendshipRouterIntegTest          : response is {"message":true}
 
 ```
-requestFilters:
-  - in: /api/health/passheader
-    out: /api/health/jwtreceiver
-    httpMethods: delete
-    accessToken:
-      option: forward
-  - in: /api/health/passheader
-    out: /api/health/jwtreceiver
-    httpMethods: get, post, put
-    accessToken:
-      option: request
-      scopes: message.read message.write
-      base64EncodedClientIdSecret: b2F1dGgtY2xpZW50Om9hdXRoLXNlY3JldA==
-    ```
-So in this case I have 2 mappings for the same inbound and outbound paths where for 1 mapping I forward the access-token for delete operation.  For `get, post, put` http methods I generate new tokens using client credential flow.
-
-When the test case runs it will forward the jwt for the delete operation.  Here is the output log:
-
-```
-2024-07-21T13:00:49.159-06:00  INFO 2351 --- [    Test worker] m.sonam.security.JwtHeaderPassIntegTest  : readiness delete requires jwt, should get bad request
-2024-07-21T13:00:49.177-06:00  INFO 2351 --- [    Test worker] m.sonam.security.JwtHeaderPassIntegTest  : call passheader endpoint
-2024-07-21T13:00:49.274-06:00 DEBUG 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextFilter     : request: /api/health/passheader
-2024-07-21T13:00:49.285-06:00 DEBUG 2351 --- [     parallel-2] me.sonam.security.EndpointHandler        : pass jwt header to receiveJwtHeader endpoint
-2024-07-21T13:00:49.285-06:00  INFO 2351 --- [     parallel-2] me.sonam.security.EndpointHandler        : call endpoint: http://localhost:56944/api/health/jwtreceiver
-2024-07-21T13:00:49.297-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : serverHttpRequest: /api/health/passheader
-2024-07-21T13:00:49.297-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : request path: /api/health/jwtreceiver, accessTokenPath: /oauth2/token
-2024-07-21T13:00:49.297-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : in path: /api/health/passheader, outbound path: /api/health/jwtreceiver
-2024-07-21T13:00:49.298-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : httpMethods: [delete]
-2024-07-21T13:00:49.298-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : request.httpMethod: DELETE
-2024-07-21T13:00:49.298-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : request.method DELETE matched with provided httpMethod delete
-2024-07-21T13:00:49.298-06:00 DEBUG 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : inPath: /api/health/passheader
-2024-07-21T13:00:49.298-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : inbound request path /api/health/passheader matches with inPath parameter: /api/health/passheader
-2024-07-21T13:00:49.298-06:00 DEBUG 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : check outbound path now
-2024-07-21T13:00:49.299-06:00 DEBUG 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : outPath: /api/health/jwtreceiver
-2024-07-21T13:00:49.299-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : outbound path /api/health/jwtreceiver matches with outbound parameter: /api/health/jwtreceiver
-2024-07-21T13:00:49.301-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : accessTokenHeader: Bearer eyJraWQiOiJlOGQ3MjIzMC1iMDgwLTRhZjEtODFkOC0zMzE3NmNhMTM5ODIiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3NzI1ZjZmZC1kMzk2LTQwYWYtOTg4Ni1jYTg4YzZlOGZjZDgiLCJhdWQiOiI3NzI1ZjZmZC1kMzk2LTQwYWYtOTg4Ni1jYTg4YzZlOGZjZDgiLCJuYmYiOjE3MTQ3NTY2ODIsImlzcyI6Imh0dHA6Ly9teS1zZXJ2ZXI6OTAwMSIsImV4cCI6MTcxNDc1Njk4MiwiaWF0IjoxNzE0NzU2NjgyLCJqdGkiOiI0NDBlZDY0My00MzdkLTRjOTMtYTZkMi1jNzYxNjFlNDRlZjUifQ.fjqgoczZbbmcnvYpVN4yakpbplp7EkDyxslvar5nXBFa6mgIFcZa29fwIKfcie3oUMQ8MDWxayak5PZ_QIuHwTvKSWHs0WL91ljf-GT1sPi1b4gDKf0rJOwi0ClcoTCRIx9-WGR6t2BBR1Rk6RGF2MW7xKw8M-RMac2A2mPEPJqoh4Pky1KgxhZpEXixegpAdQIvBgc0KBZeQme-ZzTYugB8EPUmGpMlfd-zX_vcR1ijxi8e-LRRJMqmGkc9GXfrH7MOKNQ_nu6pc6Gish2v_iuUEcpPHXrfqzGb9IHCLvfuLSaTDcYKYjQaEUAp-1uDW8-5posjiUV2eBiU48ajYg
-2024-07-21T13:00:49.301-06:00  INFO 2351 --- [     parallel-2] m.s.s.h.ReactiveRequestContextHolder     : pass inbound accessToken : eyJraWQiOiJlOGQ3MjIzMC1iMDgwLTRhZjEtODFkOC0zMzE3NmNhMTM5ODIiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3NzI1ZjZmZC1kMzk2LTQwYWYtOTg4Ni1jYTg4YzZlOGZjZDgiLCJhdWQiOiI3NzI1ZjZmZC1kMzk2LTQwYWYtOTg4Ni1jYTg4YzZlOGZjZDgiLCJuYmYiOjE3MTQ3NTY2ODIsImlzcyI6Imh0dHA6Ly9teS1zZXJ2ZXI6OTAwMSIsImV4cCI6MTcxNDc1Njk4MiwiaWF0IjoxNzE0NzU2NjgyLCJqdGkiOiI0NDBlZDY0My00MzdkLTRjOTMtYTZkMi1jNzYxNjFlNDRlZjUifQ.fjqgoczZbbmcnvYpVN4yakpbplp7EkDyxslvar5nXBFa6mgIFcZa29fwIKfcie3oUMQ8MDWxayak5PZ_QIuHwTvKSWHs0WL91ljf-GT1sPi1b4gDKf0rJOwi0ClcoTCRIx9-WGR6t2BBR1Rk6RGF2MW7xKw8M-RMac2A2mPEPJqoh4Pky1KgxhZpEXixegpAdQIvBgc0KBZeQme-ZzTYugB8EPUmGpMlfd-zX_vcR1ijxi8e-LRRJMqmGkc9GXfrH7MOKNQ_nu6pc6Gish2v_iuUEcpPHXrfqzGb9IHCLvfuLSaTDcYKYjQaEUAp-1uDW8-5posjiUV2eBiU48ajYg
-2024-07-21T13:00:49.663-06:00  INFO 2351 --- [ctor-http-nio-3] me.sonam.security.EndpointHandler        : response for endpoint 'http://localhost:56944/api/health/jwtreceiver' is: {message=jwt received endpoint}
-2024-07-21T13:00:49.664-06:00  INFO 2351 --- [ctor-http-nio-3] me.sonam.security.EndpointHandler        : got response message: jwt received endpoint
-2024-07-21T13:00:49.699-06:00  INFO 2351 --- [    Test worker] m.sonam.security.JwtHeaderPassIntegTest  : should be acesstoken path for recordedRequest: /api/health/jwtreceiver
-
-```
-
-
-
