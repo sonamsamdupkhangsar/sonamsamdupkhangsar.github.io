@@ -18,7 +18,8 @@ Some links
     c. [Create custom page type in a Rest call on Spring Reactive stack](/java-spring-stuff/map-page-response-from-webclient/README.md) 
     
     d. [How to mock user for calling api that is secured using OAuth2 configuration](/java-spring-stuff/spring-security-jwt-mocking/README.md)
-10. [Service Discovery with Spring and Eureka](/service-discovery/README.md)
+10. [How to pass variables to dockerfile instruction](/dockerfile/passing-secrets-docker-build/README.md)    
+11. [Service Discovery with Spring and Eureka](/service-discovery/README.md)
 
 Some personal stuff I am working on:
 User Signup and Authentication And Authorization using the following micrservice projects:

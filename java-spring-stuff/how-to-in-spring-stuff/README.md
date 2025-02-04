@@ -23,4 +23,11 @@ When you have want to parameterize type into the `bodyToMono(Map.class)` call be
             LOG.error(stringBuilder);
             return Mono.just(Map.of("error", stringBuilder));
         });
-    }```
+    }
+```
+
+## How to run Springboot app with Gradle using profile
+
+```
+./gradlew bootRun --args="--spring.profiles.active=local"
+```
